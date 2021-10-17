@@ -14,7 +14,15 @@ body {
     overflow-x: hidden;
     padding-top: 20px;
 }
+ /*dois topicos de atualização*/
+body >.sidenav > .login-main-text > h2:first-of-type > :link{
+    color:black;
+    text-decoration: none;
 
+}
+body >.sidenav > .login-main-text > h2:first-of-type > :visited{
+    color: white;
+}
 
 .main {
     padding: 0px 10px;
