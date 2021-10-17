@@ -14,7 +14,7 @@ body {
     overflow-x: hidden;
     padding-top: 20px;
 }
- /*dois topicos de atualização*/
+ /*dois topicos de atualizações*/
 body >.sidenav > .login-main-text > h2:first-of-type > :link{
     color:black;
     text-decoration: none;
