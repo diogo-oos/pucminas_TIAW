@@ -1,0 +1,37 @@
+html, body{
+    height: 100%;
+    margin: 0;
+}
+.bg{
+    background-image: url(../imgs/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.ref-bg > :link{
+    color: black;
+    text-decoration: none;
+}
+.ref-bg > :visited{
+    color: black;
+}
+.ref-bg{
+    font-size: small;
+    text-align: center;
+}
+
+.container{
+    margin: 10px 10px;
+}
+.container > .card.mb-3 {
+    background-color:rgba(255, 255, 255, 0.425);
+}
+.container > .card.mb-3 > .row.g-0 > .col-md-8 > .card-body > .card-text{
+    text-align: justify;
+    line-height: 1.5;
+}
+.container > .card.mb-3 > .row.g-0 > .col-md-4 > #imagemCard2{
+    max-width: 384px;
+    max-height: 490%;
+
+}
