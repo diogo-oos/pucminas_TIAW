@@ -1,6 +1,6 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-image: url(../imgs/bg.jpg);
+    background-image: url(../imgs/fundoCadastro.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -16,6 +16,10 @@ body {
     height: 100%;
     overflow-x: hidden;
     padding-top: 20px;
+}
+
+.btn.btn-sm.btn-outline:hover{
+    color: orange;
 }
 
 .main {
@@ -81,9 +85,12 @@ body {
 }
 
 #botao{
-    background-color: rgba(26, 255, 0, 0.397) !important;
     color: #000 !important;
     margin-top: 5px;
+}
+
+#botao:hover{
+    color: orange !important;
 }
 
 .login{
@@ -92,4 +99,8 @@ body {
 
 .login a{
     color: #000;
+}
+
+.login a:hover{
+    color: orange !important;
 }
