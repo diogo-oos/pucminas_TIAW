@@ -1,0 +1,18 @@
+body{
+    background-image: url(../imgs/bg-contato.jpg   );
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.ref-bg > :link{
+    color: coral;
+    text-decoration: none;
+}
+.ref-bg > :visited{
+    color: coral;
+}
+.ref-bg{
+    color: coral;
+    font-size: small;
+    text-align: center;
+}
