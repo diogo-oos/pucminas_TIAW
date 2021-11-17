@@ -126,7 +126,7 @@ function carregarDadosQTDItens(idCampo) {
     }
 
 }
-function procurarItem
+
 //-----------------------------------------------------------------------------------------------------------
 // Exibe todos os itens do estoque (nome, código e quantidade)
 // Retorno: nenhum
