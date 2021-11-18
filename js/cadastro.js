@@ -36,7 +36,7 @@ onload = () => { //evento load, retorna uma função anônima de todo o código,
                 localStorage.setItem('listaUser', JSON.stringify(listaUser));
 
                 setTimeout(() => {
-                window.location.href = 'http://127.0.0.1:5500/pages/login.html'
+                window.location.href = '../pages/login.html'
                 }, 3000);
             }
         }

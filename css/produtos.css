@@ -9,13 +9,18 @@
     padding:5px;
     border-radius: 5px;
     cursor: pointer;
+    margin-top: 5px;
+    font-size: 0.9rem;
+    transition: all .4s ease-out;
+}
+.alinhaBtns:hover{
+    background-color: #333333;
 }
 .carrinho {
     width:130px; 
     margin: 10px auto;
     border-radius: 5px;
     padding: 10px;
-
 }
 .carrinho p{
     margin:auto;
@@ -42,4 +47,14 @@ caption {
 .carrinho> img{
     max-width: 120px;
     max-height: 115px;
+}
+.btn.btn-sm.btn-outline.sair:hover {
+    background-color: orange;
+    color: #FFF;
+}
+.btn.btn-sm.btn-outline.sair{
+    margin: 5px;
+}
+.btn.btn-sm.btn-outline.sair{
+    transition: all .4s ease-out !important;
 }

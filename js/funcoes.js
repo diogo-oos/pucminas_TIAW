@@ -1,4 +1,18 @@
 //-----------------------------------------------------------------------------------------------------------
+// Função: verificarToken
+// Verifica se foi feito o login antes do acesso à página, de acordo com um código token criado no localStorage
+// ao efetuar o login
+// Parâmetros:
+// - nenhum
+// Retorno: nenhum
+//-----------------------------------------------------------------------------------------------------------
+function verificarToken() {
+    if (localStorage.getItem('token') == null) {
+        alert('Você precisa estar logado para acessar essa página');
+        window.location.href = ('../pages/login.html');
+    }
+}
+//-----------------------------------------------------------------------------------------------------------
 // Função: validarProduto(idNomeProduto, idCodProduto, idQtidadeProduto)
 // Verifica se foram informados o nome e o código do produto
 // Parâmetros:
@@ -161,4 +175,9 @@ function apagarDadosEstoque() {
     else {
         alert("Não há dados a serem excluídos verifique seu estoque.")
     }
+}
+
+function sair() {
+    localStorage.removeItem('token');
+    window.location.href = ('../pages/index.html');
 }

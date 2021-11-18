@@ -37,10 +37,10 @@ onload = () => { //evento load, retorna uma função anônima de todo o código,
                     msg.style.display = "none";//mensagem de erro sendo ocultada com display = 'none'
                     msg.innerHTML = '';
 
-                    //window.location.href = 'link para a página de início'; após a autenticação, o usuário será manda para a página de início
+                    window.location.href = '../pages/softwareTelaPrincipal.html'; //após a autenticação, o usuário será mandado para a página de início
                     
                     let token = Math.random().toString(16).substr(2) + Math.random().toString(16).substr(2);
-                    //token de validação, geredo de forma aleatória pelo método random(), hexadecimal, ignorando os dois primeiros caracteres, depois concatenado com ele mesmo para dobrar o tamanho.
+                    //token de validação, gerado de forma aleatória pelo método random(), hexadecimal, ignorando os dois primeiros caracteres, depois concatenado com ele mesmo para dobrar o tamanho.
                     //o token será utilizadao na página de início para impedir a permanencia sem o login
                     localStorage.setItem('token', token); //criação da chave 'token' para armazenamento do conteudo da variável token criada acima
                 }
