@@ -147,8 +147,10 @@ function carregarDadosQTDItens(idCampo) {
 function listarEstoque() {
     if (typeof (Storage) !== "undefined") {
         let estoque = localStorage.getItem("estoque");
-        if (estoque == null)
-            alert("OPS! Ainda não há nenhum item no estoque. Clique no botão voltar no seu navegador.");
+        if (estoque == null) {
+            alert("OPS! Ainda não há nenhum item no estoque.");
+            window.location.href = '../pages/softwareTelaPrincipal.html';
+        }  
         else {
 
             estoque = JSON.parse(estoque);
