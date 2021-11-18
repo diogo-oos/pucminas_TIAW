@@ -16,11 +16,20 @@
 </head>
 
 <body onload="carregarTotalEstoque('totalEstoque'), verificarToken()">
+    <header class="navbar navbar-expand-lg navbar-light" style="background-color: rgba(18, 206, 12, 0.219)">
+        <div class="container-fluid">
+            <a class="navbar-brand"><b><i>SiGEs |</i></b></a>
+            <button onclick="sair()" class="btn btn-sm btn-outline sair" type="button"><i class="bi bi-arrow-left-circle" style="font-size: 1em; padding: 5px;"></i>Sair</button>
+            <!--script bootstrap-->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
+    </header>
     <div class="container">
         <!--Formulário: Nome, código e quantidade de produtos-->
+        <div id="titulo"><b>Cadastro de novos produtos</b></div>
         <form>
             <table>
-                <caption>Cadastro de novos produtos</caption>
                 <!--Nome do produto-->
                 <tr>
                     <td class="alinharRotulos">Nome do produto:</td>
@@ -92,12 +101,12 @@
                 <!--Botoes-->
                 <tr>
                     <td colspan="2" align="center">
-                        <input type="button" value="Cadastrar Item" class="alinhaBtns"
+                        <input type="button" value="Cadastrar Item" class="alinhaBtns" id="cadastrar"
                             onclick="validarProduto('txtNomeProduto','txtCodProduto','qtidadeProduto')">
-                        <input type="button" value="Itens em Estoque" class="alinhaBtns"
+                        <input type="button" value="Itens em Estoque" class="alinhaBtns" id="verEstoque"
                             onclick="window.open('verEstoque.html','_self')">
-                        <input type="button" value="Remover Item" class="alinhaBtns"
-                            onclick="validarProdutoParaRemocao('txtNomeProduto','txtCodProduto','qtidadeProduto')">
+                        <input type="button" value="Remover Item" class="alinhaBtns" id="removeItem"
+                            onclick="validarProdutoParaRemocao('txtNomeProduto','txtCodProduto','qtidadeProduto')" id="limpar">
                         <input type="button" value="Limpar Todos os Itens do Estoque" class="alinhaBtns"
                             onclick="apagarDadosEstoque()">
                     </td>
@@ -105,18 +114,14 @@
             </table>
         </form>
         <!--indicador do estoques-->
-        <div class="carrinho">
+        <div class="estoque">
             <img src="../imgs/shelf.png">
             <div class="card-text">
                 <p><b>Itens no estoque: <span id="totalEstoque">0</span></b></p>
             </div>
         </div>
     </div>
-    <button onclick="sair()" class="btn btn-sm btn-outline sair" type="button"><i class="bi bi-arrow-left-circle" style="font-size: 1em; padding: 5px;"></i>Sair</button>
-    <!--script bootstrap-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-    crossorigin="anonymous"></script>
+   
 </body>
 
 </html>

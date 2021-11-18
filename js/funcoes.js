@@ -89,7 +89,7 @@ function validarProdutoParaRemocao(idNomeProduto, idCodProduto, idQtidadeProduto
 function removerProduto(produto, codig, qtidade) {
     let removerProduto = { quantidade: qtidade };
     if (typeof (Storage) !== "undefined") {
-        let estoque = localStorage.getItem("estoque");
+        estoque = localStorage.getItem("estoque");
         if (estoque == null) {
             alert("Não há itens cadastrados no estoque");
         } // Nenhum produto ainda foi cadastrado
@@ -101,10 +101,10 @@ function removerProduto(produto, codig, qtidade) {
                 alert(+ qtidade + " unidades do produto " + produto + "foram removidas do estoque");
                 removerItemEstoque("totalEstoque");
                 location.reload();
-            } 
-            else{
+            }
+            else {
                 alert("Não há itens cadastrados com os dados informados. Tente novamente.")
-            } 
+            }
 
         }
     }
@@ -138,7 +138,6 @@ function carregarDadosQTDItens(idCampo) {
         }
         document.getElementById(idCampo).innerHTML = removeQtd;
     }
-
 }
 
 //-----------------------------------------------------------------------------------------------------------
@@ -168,7 +167,8 @@ function listarEstoque() {
 
 function apagarDadosEstoque() {
     if (typeof (Storage) !== "undefined") {
-        localStorage.clear();
+        localStorage.removeItem("totalEstoque");
+        localStorage.removeItem("estoque");
         carregarTotalEstoque("totalEstoque");
         location.reload();
     }

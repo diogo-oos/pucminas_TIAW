@@ -1,60 +1,67 @@
+/*------------------------/ CONFIGURAÇÕES DO HEADER (CABECALHO) /------------------------*/
+.btn.btn-sm.btn-outline.sair:hover {
+    background-color: orange;
+    color: #FFF;
+}
+.btn.btn-sm.btn-outline.sair{
+    margin: 8px;
+   
+}
+.btn.btn-sm.btn-outline.sair{
+    transition: all 0.5s ease-out !important;
+}
+/*------------------------/ CONFIGURAÇÕES DOS PREENCHIMENTOS /------------------------*/
 .alinharRotulos {
     text-align: right;
 }
-.alinhaBtns {
-    width:30%;
-    background-color: black;
-    color:white;
-    border:0px;
-    padding:5px;
-    border-radius: 5px;
-    cursor: pointer;
+input, select{
     margin-top: 5px;
-    font-size: 0.9rem;
-    transition: all .4s ease-out;
-}
-.alinhaBtns:hover{
-    background-color: #333333;
-}
-.carrinho {
-    width:130px; 
-    margin: 10px auto;
-    border-radius: 5px;
-    padding: 10px;
-}
-.carrinho p{
-    margin:auto;
 }
 table {
     clear: both; 
     background-color: rgb(255, 127, 80);
     border-radius: 10px; 
     color:white;
-    padding:10px;
-    width:70%;
-    margin:100px auto;    
+    padding: 10px;
+    width: 80%;
+    margin: 10px auto;   
 }
-caption {
+/*------------------------/ CONFIGURAÇÕES DO TITULO /------------------------*/
+#titulo{
     color:coral; 
     font-weight: bold; 
     font-size: 40px;
-    margin: 10px auto ;
-    
+    margin: 5px auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
 }
-.carrinho{
-    background-color: rgba(18, 206, 12, 0.219);
+/*------------------------/ CONFIGURAÇÕES DOS BOTÕES /------------------------*/
+.alinhaBtns {
+    width:30%;
+    background-color: black;
+    color:white;
+    border:0px;
+    padding:5px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 10px auto;
+    font-size: 0.9rem;
+    transition: all 0.4s ease-out;
 }
-.carrinho> img{
+.alinhaBtns:hover{
+    background-color: #333333;
+}
+
+/*------------------------/ CONFIGURAÇÕES DO INDICADOR DE ITENS /------------------------*/
+.estoque> img{
     max-width: 120px;
-    max-height: 115px;
+    max-height: 120px;
 }
-.btn.btn-sm.btn-outline.sair:hover {
-    background-color: orange;
-    color: #FFF;
-}
-.btn.btn-sm.btn-outline.sair{
-    margin: 5px;
-}
-.btn.btn-sm.btn-outline.sair{
-    transition: all .4s ease-out !important;
+.estoque {
+    width:170px; 
+    margin: 50px auto;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    background-color: rgba(18, 206, 12, 0.219);
 }
