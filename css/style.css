@@ -2,7 +2,6 @@
 html, body{
     height: 100%;
     width: 100%;
-
     margin: 0;
 }
 body{
@@ -32,9 +31,7 @@ header > .container-fluid > .collapse.navbar-collapse> .justify-content-start > 
     color: white;
     transition: 0.5s;
 }
-
 /*-----------------------------/ CONFIGURAÇÕES DO CONTEUDO /-----------------------------*/
-
 .flex{
     display: flex;
     background-size: 100%;
@@ -53,7 +50,6 @@ header > .container-fluid > .collapse.navbar-collapse> .justify-content-start > 
     flex: 1 1 1500px;
     margin: 10px 10px
 }
-
 #card-about{
     background-image: url(https://image.freepik.com/vetores-gratis/fundo-de-ponto-de-interrogacao-branco-em-estilo-minimalista_1017-25235.jpg);
     background-size: cover;
@@ -70,44 +66,26 @@ header > .container-fluid > .collapse.navbar-collapse> .justify-content-start > 
 }
 #card-ctt{
     background-image: url(https://image.freepik.com/vetores-gratis/fundo-branco-abstrato_23-2148810353.jpg);
-    background-size: cover;
-   
-   
+    background-size: cover;   
 }
-
-@media screen and (max-width:600px){
-
+.flex > #card-obj > .row.g-0 > .col-md-2 > img{
+    display: block;
+    margin-right: 0;
+    margin-left: auto;
+}
+@media screen and (max-width:500px) and (max-width:900px){
     #card-func{
         background-image: url(https://image.freepik.com/vetores-gratis/memphis-simples-tom-laranja_53876-114613.jpg);
         background-repeat: repeat;
         background-size: cover;
         background-position: auto;
     }
-  
     .flex > #card-obj > .row.g-0 > .col-md-2 > img{
-        position: relative;
-        left:50px;
-        border-bottom-left-radius: 500px;
-        border-top-right-radius: 50px;
-        width: auto;
-        height: auto;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        border-radius: 20px;     
     }
-}
-
-
-
-/* Breakpoint: 1024 */
-@media screen and (min-width:601px) and (max-width:1024px){
-
-  
-
-}
-
-/* Breakpoint: 1200 */
-@media screen and (min-width:1025px) and (max-width:1200px){
-
-    
-
 }
 /*------------------------/ CONFIGURAÇÕES DO FOOTER (RODAPE) /------------------------*/
 .ref-bg > :link{
