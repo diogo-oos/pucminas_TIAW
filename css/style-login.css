@@ -1,9 +1,13 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-image: url(../imgs/fundoLogin.png);
+    background-image: url(../imgs/bg-login.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+}
+
+button, a{
+    transition: all .4s ease-out !important;
 }
 
 .main-head{
@@ -16,14 +20,49 @@ body {
     height: 100%;
     overflow-x: hidden;
     padding-top: 20px;
+    background-image: url(../imgs/bg-login-lat.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: fixed;
 }
 
-.btn.btn-sm.btn-outline:hover{
-    color: orange;
+.cadastro{
+    margin-left: 21%;
+}
+    
+.btn.btn-lg.btn-outline.cadastro{
+    color: #FFF;
+}
+
+.btn.btn-lg.btn-outline.cadastro:hover{
+    background-color: orange !important;
+    color: #006F16 !important;
+}
+
+.btn.btn-sm.btn-outline.voltar:hover{
+    background-color: orange;
+    color: #FFF;
 }
 
 .main {
     padding: 0px 10px;
+}
+
+#msg{
+    display: none;
+    color: #ff0000;
+    background-color: #ffbbbb;
+    padding: 10px;
+    border-radius: 4px
+}
+
+#olho{
+    cursor: pointer;
+}
+
+#olhoCortado{
+    display: none;
+    cursor: pointer;
 }
 
 @media screen and (max-height: 450px) {
@@ -32,7 +71,7 @@ body {
     }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (min-width: 450px) {
     .login-form{
         margin-top: 10%;
     }
@@ -72,26 +111,24 @@ body {
 .login-main-text{
     margin-top: 20%;
     padding: 60px;
-    color: #000;
+    color: #FFF;
 }
 
 .login-main-text h2{
     font-weight: 300;
 }
 
-.btn-black{
+#botao{
     color: #000 !important;
     margin-top: 5px;
 }
 
-.btn-black:hover{
-    color: orange !important;
+#botao:hover{
+    background-color: orange !important;
+    color: #FFF !important;
 }
 
-.registro a{
-    color: #000;
-}
-
-.registro a:hover{
-    color: orange !important;
+#botao:disabled {
+    cursor: not-allowed;
+    pointer-events: all !important;
 }

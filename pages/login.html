@@ -15,6 +15,8 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
    <!--icons bootstrap-->
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
+   <!--link script externo-->
+   <script src="../js/login.js"></script>
 </head>
 
 
@@ -23,44 +25,48 @@
    <header class="navbar navbar-expand-lg navbar-light">
       <div class="container-fluid">
          <form class="justify-content-start">
+            <a button class="btn btn-sm btn-outline voltar" href="index.html" type="button"><i class="bi bi-arrow-left-circle" style="font-size: 1em; padding: 5px;"></i>Voltar</button></a>
             <a button class="btn btn-sm btn-outline" href="index.html" type="button"><i class="bi bi-arrow-left-circle"
                   style="font-size: 1em; padding: 5px;"></i>Voltar</button></a>
          </form>
       </div>
    </header>
-
    <main>
-      <section>
-         <article class="sidenav">
-            <div class="login-main-text">
-               <h2><i><b>SiGEs</b></i> - Organize, gerencie e cresça sempre!<br>Página de login</h2>
-               <p><b>Faça o login ou cadastre-se para acessar.</b></p>
-            </div>
-         </article>
+      <section class="sidenav">
+         <div class="login-main-text">
+            <h1><i><b>SiGEs</b></i> - Página de login<br></h1>
+            <p><b>Caso não possua uma conta, você pode criar uma clicando no botão abaixo</b></p>
+         </div>
+         <div class="cadastro">
+            <a button class="btn btn-lg btn-outline cadastro" href="cadastro.html" type="button">Cadastro</button></a>
+         </div>
       </section>
 
       <section>
          <article class="main">
             <div class="col-md-6 col-sm-12">
                <div class="login-form">
-                  <form>
+                  <h3>
+                     Entrar
+                  </h3>
+                  <div id="msg"></div> //mensagem de erro
+                  <form id="login" action="login.php" method="post">
                      <div class="form-group">
-                        <label>E-mail:</label>
-                        <input type="text" class="form-control" placeholder="E.: seunome123@gmail.com">
+                        <label id="labelEmail">E-mail:</label>
+                        <input type="text" id="email" name="email" class="form-control" placeholder="E.: seunome123@gmail.com">
                      </div>
                      <div class="form-group">
-                        <label>Senha</label>
-                        <input type="password" class="form-control" placeholder="Min. 8 caracteres">
+                        <label id="labelSenha">Senha</label>
+                        <i id="olho" class="bi bi-eye"></i>
+                        <i id="olhoCortado" class="bi bi-eye-slash"></i>
+                        <input type="password" id="senha" name="senha" class="form-control" placeholder="Min. 8 caracteres">
                      </div>
-                     <button type="submit" class="btn btn-black">Login<i class="bi bi-box-arrow-in-right"></i></button>
+                     <button id="botao" type="submit" class="btn btn-black">Login<i class="bi bi-box-arrow-in-right"></i></button>
                      <div class="checkbox mb-3">
                         <label>
                            <input type="checkbox" value="remenber-me">
                            Lembre-se de mim
                         </label>
-                     </div>
-                     <div class="registro">
-                        <a href="cadastro.html">Não tem conta? Cadastre-se</a>
                      </div>
                   </form>
                </div>

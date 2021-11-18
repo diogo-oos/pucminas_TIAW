@@ -15,12 +15,16 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
    <!--icons bootstrap-->
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
+   <!--link script externo-->
+   <script src="../js/cadastro.js"></script>
 </head>
 
 <body>
    <header class="navbar navbar-expand-lg navbar-light">
       <div class="container-fluid">
          <form class="justify-content-start">
+            <a button class="btn btn-sm btn-outline voltar" href="index.html" type="button"><i class="bi bi-arrow-left-circle" style="font-size: 1em; padding: 5px;"></i>Voltar</button></a>
+=======
             <a button class="btn btn-sm btn-outline" href="index.html" type="button"><i class="bi bi-arrow-left-circle"
                   style="font-size: 1em; padding: 5px;"></i>Voltar</button></a>
          </form>
@@ -28,17 +32,53 @@
    </header>
 
    <main>
-      <section>
-         <article class="sidenav">
-            <div class="login-main-text">
-               <h2><i><b>SiGEs</b></i> - Organize, gerencie e cresça sempre!<br>Página de cadastro</h2>
-               <p><b>Por favor, informe seus dados para continuar.</b></p>
-            </div>
-         </article>
+      <section class="sidenav">
+         <div class="login-main-text">
+            <h1><i><b>SiGEs</b></i> - Página de cadastro<br></h1>
+            <p><b>Caso já esteja conosco, você pode clicar no botão abaixo para fazer seu login</b></p>
+         </div>
+         <div class="login">
+            <a button class="btn btn-lg btn-outline login" href="login.html" type="button">Login</button></a>
+         </div>
       </section>
 
       <section>
          <article class="main">
+                     <div class="col-md-6 col-md-offset-3">
+                        <div class="login-form">
+                           <h3>
+                              Por favor, informe seus dados para continuar
+                           </h3>
+                           <div id="msg"></div> //mensagem para sucesso no cadastro
+                           <form id="cadastro" accept-charset="utf-8" class="form" role="form">  
+                              <div class="row">
+                                 <div class="col-xs-6 col-md-6">
+                                    <label id="labelNome" >Primeiro nome:</label>
+                                    <input id="nome" type="text" name="nome" value="" class="form-control input-lg" placeholder="Ex.: Joâo"  />                        
+                                 </div>
+                                 <div class="col-xs-6 col-md-6">
+                                    <label id="labelSobrenome" >Sobrenome:</label>
+                                    <input id="sobrenome" type="text" name="sobrenome" value="" class="form-control input-lg" placeholder="Ex.: Gomes"  />                        
+                                 </div>
+                              </div>
+                              <label for="email" id="labelEmail">Digite seu e-mail:</label>
+                              <input type="text" id="email" name="email" value="" class="form-control input-lg" placeholder="E.: seunome123@gmail.com">
+                              
+                              <label for="senha" id="labelSenha">Digite sua senha:</label>
+                              <i id="olhoSenha" class="bi bi-eye"></i>
+                              <i id="olhoCortadoSenha" class="bi bi-eye-slash"></i>
+                              <input type="password" id="senha" name="senha" value="" class="form-control input-lg" placeholder="Min. 8 caracteres">
+                              
+                              <label for="confirmarSenha" id="labelConfirmarSenha">Confirme sua senha:</label>
+                              <i id="olhoConfirmarSenha" class="bi bi-eye"></i>
+                              <i id="olhoCortadoConfirmarSenha" class="bi bi-eye-slash"></i>
+                              <input type="password" id="confirmarSenha" name="confirmarSenha" value="" class="form-control input-lg" placeholder="Min. 8 caracteres">                    
+                              
+                              <span class="help-block"><strong>Ao clicar em Criar minha conta, você concorda com nossos Termos e que leu nossa Política de Uso de Dados, incluindo nosso Uso de Cookies.</strong><br></span>
+                              <button id="botao" class="btn btn-lg btn-black" type="submit">Criar minha conta <i class="bi bi-door-open"></i></i></i></button>
+                           </form>       
+                        </div>           
+=======
             <div class="col-md-6 col-md-offset-3">
                <div class="login-form">
                   <form action="r" method="post" accept-charset="utf-8" class="form" role="form">

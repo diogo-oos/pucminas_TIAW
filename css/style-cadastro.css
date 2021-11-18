@@ -1,9 +1,13 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-image: url(../imgs/fundoCadastro.png);
+    background-image: url(../imgs/bg-cadastro.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+}
+
+button, a{
+    transition: all .4s ease-out !important;
 }
 
 .main-head{
@@ -16,16 +20,58 @@ body {
     height: 100%;
     overflow-x: hidden;
     padding-top: 20px;
+    background-image: url(../imgs/bg-cadastro-lat.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: fixed;
 }
 
-.btn.btn-sm.btn-outline:hover{
-    color: orange;
+.login{
+    margin-left: 22%;
+}
+    
+.btn.btn-lg.btn-outline.login{
+    color: #FFF;
+}
+.btn.btn-lg.btn-outline.login:hover{
+    background-color: orange !important;
+    color: #037075 !important;
+}
+
+.btn.btn-sm.btn-outline.voltar:hover{
+    background-color: orange;
+    color: #FFF;
 }
 
 .main {
     padding: 0px 10px;
 }
 
+#msg{
+    display: none;
+    color: #00bb00;
+    background-color: #bbffbe;
+    padding: 10px;
+    border-radius: 4px
+}
+
+#olhoSenha{
+    cursor: pointer;
+}
+
+#olhoCortadoSenha{
+    display: none;
+    cursor: pointer;
+}
+
+#olhoConfirmarSenha{
+    cursor: pointer;
+}
+
+#olhoCortadoConfirmarSenha{
+    display: none;
+    cursor: pointer;
+}
 @media screen and (max-height: 450px) {
     .sidenav {
         padding-top: 15px;
@@ -40,7 +86,7 @@ body {
 
     .register-form{
         margin-top: 10%;
-    }
+    }   
 }
 
 @media screen and (min-width: 768px){
@@ -73,7 +119,7 @@ body {
 .login-main-text{
     margin-top: 20%;
     padding: 60px;
-    color: #000;
+    color: #FFF;
 }
 
 .login-main-text h2{
@@ -84,23 +130,17 @@ body {
     margin-bottom: 10px;
 }
 
-#botao{
+.btn.btn-lg.btn-black{
     color: #000 !important;
     margin-top: 5px;
 }
 
-#botao:hover{
-    color: orange !important;
+.btn.btn-lg.btn-black:hover{
+    background-color: orange !important;
+    color: #FFF !important;
 }
 
-.login{
-    margin-top: 18px;
-}
-
-.login a{
-    color: #000;
-}
-
-.login a:hover{
-    color: orange !important;
+#botao:disabled {
+    cursor: not-allowed;
+    pointer-events: all !important;
 }
