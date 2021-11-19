@@ -1,7 +1,8 @@
 /*------------------------/ CONFIGURAÇÕES DO BODY /------------------------*/
 #software{
  background-image: url("../imgs/bg-app-principal.jpg");
- background-size: cover;
+ background-size:120%;
+ background-repeat: no-repeat;
 }
 /*------------------------/ CONFIGURAÇÕES DO HEADER (CABECALHO) /------------------------*/
 .btn.btn-sm.btn-outline.sair:hover {
