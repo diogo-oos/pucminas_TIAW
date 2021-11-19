@@ -168,7 +168,7 @@ function listarEstoque() {
 }
 
 function apagarDadosEstoque() {
-    if (typeof (Storage) !== "undefined") {
+    if (typeof ("estoque") !== "undefined") {
         localStorage.removeItem("totalEstoque");
         localStorage.removeItem("estoque");
         carregarTotalEstoque("totalEstoque");

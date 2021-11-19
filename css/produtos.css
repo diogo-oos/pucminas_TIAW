@@ -1,3 +1,8 @@
+/*------------------------/ CONFIGURAÇÕES DO BODY /------------------------*/
+#software{
+ background-image: url("../imgs/bg-app-principal.jpg");
+ background-size: cover;
+}
 /*------------------------/ CONFIGURAÇÕES DO HEADER (CABECALHO) /------------------------*/
 .btn.btn-sm.btn-outline.sair:hover {
     background-color: orange;
@@ -19,7 +24,7 @@ input, select{
 }
 table {
     clear: both; 
-    background-color: rgb(255, 127, 80);
+    background-color: rgba(255, 127, 80, 0.815);
     border-radius: 10px; 
     color:white;
     padding: 10px;
@@ -38,20 +43,32 @@ table {
 /*------------------------/ CONFIGURAÇÕES DOS BOTÕES /------------------------*/
 .alinhaBtns {
     width:30%;
-    background-color: black;
-    color:white;
-    border:0px;
     padding:5px;
     border-radius: 10px;
     cursor: pointer;
     margin: 10px auto;
     font-size: 0.9rem;
+}
+#cadastrar:hover{
+    background-color: rgba(5, 233, 36, 0.616);
+    color: white;
     transition: all 0.4s ease-out;
 }
-.alinhaBtns:hover{
-    background-color: #333333;
+#verEstoque:hover{
+    background-color: rgba(0, 0, 255, 0.89);
+    color: white;
+    transition: all 0.4s ease-out;
 }
-
+#removeItem:hover{
+    background-color: rgba(233, 5, 5, 0.616);
+    color: white;
+    transition: all 0.4s ease-out;
+}
+#limpar:hover{
+    background-color: black;
+    color: white;
+    transition: all 0.4s ease-out;
+}
 /*------------------------/ CONFIGURAÇÕES DO INDICADOR DE ITENS /------------------------*/
 .estoque> img{
     max-width: 120px;
