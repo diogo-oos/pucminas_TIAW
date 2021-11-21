@@ -169,10 +169,16 @@ function listarEstoque() {
 
 function apagarDadosEstoque() {
     if (typeof ("estoque") !== "undefined") {
-        localStorage.removeItem("totalEstoque");
-        localStorage.removeItem("estoque");
-        carregarTotalEstoque("totalEstoque");
-        location.reload();
+        let confirmAction = window.confirm('Essa ação irá apagar TODOS os itens do estoque. Deseja continuar?');
+        if (confirmAction) {
+            localStorage.removeItem("totalEstoque");
+            localStorage.removeItem("estoque");
+            carregarTotalEstoque("totalEstoque");
+            location.reload();
+        }
+        else{
+            location.reload();
+        }
     }
     else {
         alert("Não há dados a serem excluídos verifique seu estoque.")
