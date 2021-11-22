@@ -1,4 +1,16 @@
 //-----------------------------------------------------------------------------------------------------------
+// Função: sair
+// Encerra a sessão do usuário ao clicar no botão localizado no cabeçalho
+// Parâmetros:
+// - nenhum
+// Retorno: nenhum
+//-----------------------------------------------------------------------------------------------------------
+
+function sair() {
+    localStorage.removeItem('token');
+    window.location.href = ('../pages/index.html');
+}
+//-----------------------------------------------------------------------------------------------------------
 // Função: verificarToken
 // Verifica se foi feito o login antes do acesso à página, de acordo com um código token criado no localStorage
 // ao efetuar o login
@@ -177,9 +189,4 @@ function apagarDadosEstoque() {
     else {
         alert("Não há dados a serem excluídos verifique seu estoque.")
     }
-}
-
-function sair() {
-    localStorage.removeItem('token');
-    window.location.href = ('../pages/index.html');
 }
