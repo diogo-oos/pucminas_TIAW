@@ -178,14 +178,19 @@ function listarEstoque() {
     }
     else alert("A versão do seu navegador é muito antiga. Por isso, não será possível visualizar o estoque!");
 }
+//-----------------------------------------------------------------------------------------------------------
+// Excluí todos os itens do estoque (nome, código e quantidade) zerando a qtd e itens. Tudo precisa ser recadastrado.
+// Retorno: nenhum
+//-----------------------------------------------------------------------------------------------------------
 
 function apagarDadosEstoque() {
     if (typeof ("estoque") !== "undefined") {
-        let confirmAction = window.confirm('Essa ação irá apagar TODOS os itens do estoque. Deseja continuar?');
+        let confirmAction = window.confirm('Essa ação irá apagar TODOS os itens do estoque e não será possível recuperar. Deseja continuar?');
         if (confirmAction) {
             localStorage.removeItem("totalEstoque");
             localStorage.removeItem("estoque");
             carregarTotalEstoque("totalEstoque");
+            alert("Seu estoque foi erado, é necessário inserir todos os dados novamente.");
             location.reload();
         }
         else{

@@ -85,7 +85,7 @@ table {
     background-color: rgba(18, 206, 12, 0.219);
 }
 /*------------------------/ CONFIGURAÇÕES MEDIA QUERIES /------------------------*/
-@media screen and (max-width:800px){
+@media screen and (max-width:1000px){
     #software{
         background-image: url("../imgs/bg-app-principal.jpg");
         background-size:cover;
@@ -128,5 +128,10 @@ table {
         padding: 0px;
         margin: 5px auto;
     }
-
+    
+}
+#quadroFundo{
+    background-color: rgba(0, 0, 255, 0.082);
+    margin: 10px 10px;
+    padding: 5%;
 }
