@@ -99,25 +99,27 @@ function validarProdutoParaRemocao(idNomeProduto, idCodProduto, idQtidadeProduto
     }
 }
 function removerProduto(produto, codig, qtidade) {
-    let removerProduto = { quantidade: qtidade };
+    let busca = {nome: produto, codigo: codig, quantidade: qtidade};
     if (typeof (Storage) !== "undefined") {
-        estoque = localStorage.getItem("estoque");
+        let estoque = [];
+        estoque = JSON.parse(localStorage.getItem("estoque"));
         if (estoque == null) {
             alert("Não há itens cadastrados no estoque");
         } // Nenhum produto ainda foi cadastrado
         else {
-            estoque = JSON.parse(estoque);
-            var busca = estoque.indexOf(removerProduto);
-            if (busca !== -1) {
-                window.localStorage.removeItem("estoque", JSON.stringify(estoque))
-                alert(+ qtidade + " unidades do produto " + produto + "foram removidas do estoque");
-                removerItemEstoque("totalEstoque");
-                location.reload();
-            }
-            else {
+            let verificar = estoque.forEach((item) => {
+                if (produto == item.nome && codig == item.codigo && qtidade == item.quantidade) {
+                    estoque.splice(estoque.indexOf(busca), 1);
+                    localStorage.setItem("estoque", JSON.stringify(estoque));
+                    alert(+ qtidade + " unidades do produto " + produto + " foram removidas do estoque!");
+                    location.reload();
+
+                    return 1;
+                }
+            });
+            if (verificar != 1) {
                 alert("Não há itens cadastrados com os dados informados. Tente novamente.")
             }
-
         }
     }
     else alert("A versão do seu navegador é muito antiga. Por isso, não será possível executar essa aplicação");
