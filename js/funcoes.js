@@ -99,7 +99,8 @@ function validarProdutoParaRemocao(idNomeProduto, idCodProduto, idQtidadeProduto
     }
 }
 function removerProduto(produto, codig, qtidade) {
-    let busca = {nome: produto, codigo: codig, quantidade: qtidade};
+    let posicao = 0;
+    let verificar = 0;
     if (typeof (Storage) !== "undefined") {
         let estoque = [];
         estoque = JSON.parse(localStorage.getItem("estoque"));
@@ -107,18 +108,18 @@ function removerProduto(produto, codig, qtidade) {
             alert("Não há itens cadastrados no estoque");
         } // Nenhum produto ainda foi cadastrado
         else {
-            let verificar = estoque.forEach((item) => {
+            estoque.forEach((item) => {
                 if (produto == item.nome && codig == item.codigo && qtidade == item.quantidade) {
-                    estoque.splice(estoque.indexOf(busca), 1);
+                    estoque.splice(posicao,1);
                     localStorage.setItem("estoque", JSON.stringify(estoque));
                     alert(+ qtidade + " unidades do produto " + produto + " foram removidas do estoque!");
                     location.reload();
-
-                    return 1;
+                    verificar = 1;
                 }
+                posicao++;
             });
-            if (verificar != 1) {
-                alert("Não há itens cadastrados com os dados informados. Tente novamente.")
+            if (verificar !=1) {
+                alert('Não há itens cadastrados com os dados informados. Por favor, tente novamente.');
             }
         }
     }
@@ -192,7 +193,7 @@ function apagarDadosEstoque() {
             localStorage.removeItem("totalEstoque");
             localStorage.removeItem("estoque");
             carregarTotalEstoque("totalEstoque");
-            alert("Seu estoque foi erado, é necessário inserir todos os dados novamente.");
+            alert("Seu estoque foi errado, é necessário inserir todos os dados novamente.");
             location.reload();
         }
         else{
