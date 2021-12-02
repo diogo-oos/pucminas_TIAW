@@ -7,7 +7,7 @@
 }
 /*------------------------/ CONFIGURAÇÕES DO HEADER (CABECALHO) /------------------------*/
 .btn.btn-sm.btn-outline.sair:hover {
-    background-color: orange;
+    background-color: #FF7F50;
     color: #FFF;
 }
 .btn.btn-sm.btn-outline.sair{
@@ -83,6 +83,7 @@ table {
     padding: 10px;
     text-align: center;
     background-color: rgba(18, 206, 12, 0.219);
+    box-shadow: 1px 4px 3px 0px;
 }
 /*------------------------/ CONFIGURAÇÕES MEDIA QUERIES /------------------------*/
 @media screen and (max-width:1000px){
@@ -134,4 +135,6 @@ table {
     background-color: rgba(0, 0, 255, 0.082);
     margin: 10px 10px;
     padding: 5%;
+    border-radius: 10px;
+    box-shadow: 1px 4px 3px 0px;
 }

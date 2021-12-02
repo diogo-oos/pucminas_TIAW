@@ -168,15 +168,26 @@ function listarEstoque() {
             window.location.href = '../pages/softwareTelaPrincipal.html';
         }  
         else {
-
+            posicao = -1;
             estoque = JSON.parse(estoque);
-            document.write("<h1>Estoque:</h1>")
+            let titulo = document.querySelector('#titulo');
+            titulo.innerHTML = "Seu estoque:";
             estoque.forEach(produto => {
-                document.write("<ul>");
-                document.write("<li>Nome do produto: " + produto.nome + "</li>");
-                document.write("<li>Código do produto: " + produto.codigo + "</li>");
-                document.write("<li>Quantidade no estoque: " + produto.quantidade + "</li>");
-                document.write("</ul>");
+                let listaDoEstoque = document.querySelector('#listaDoEstoque');
+                listaDoEstoque.innerHTML += `
+                <li>Nome do produto: <span></span></li>
+                <li>Código do produto: <span></span></li>
+                <li>Quantidade no estoque: <span></span></li>
+                <p id="divisao">====================</p>
+                `;
+
+                let colocarValores = document.querySelectorAll('#listaDoEstoque span');
+                posicao++;
+                colocarValores[posicao].innerHTML =  produto.nome;
+                posicao++;
+                colocarValores[posicao].innerHTML =  produto.codigo;
+                posicao++;
+                colocarValores[posicao].innerHTML =  produto.quantidade;
             });
         }
     }

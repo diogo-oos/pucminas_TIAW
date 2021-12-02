@@ -35,12 +35,12 @@ button, a{
 }
 
 .btn.btn-lg.btn-outline.cadastro:hover{
-    background-color: orange !important;
+    background-color: #FF7F50 !important;
     color: #006F16 !important;
 }
 
 .btn.btn-sm.btn-outline.voltar:hover{
-    background-color: orange;
+    background-color: #FF7F50;
     color: #FFF;
 }
 
@@ -124,7 +124,7 @@ button, a{
 }
 
 #botao:hover{
-    background-color: orange !important;
+    background-color: #FF7F50 !important;
     color: #FFF !important;
 }
 

@@ -34,12 +34,12 @@ button, a{
     color: #FFF;
 }
 .btn.btn-lg.btn-outline.login:hover{
-    background-color: orange !important;
+    background-color: #FF7F50 !important;
     color: #037075 !important;
 }
 
 .btn.btn-sm.btn-outline.voltar:hover{
-    background-color: orange;
+    background-color: #FF7F50;
     color: #FFF;
 }
 
@@ -136,7 +136,7 @@ button, a{
 }
 
 .btn.btn-lg.btn-black:hover{
-    background-color: orange !important;
+    background-color: #FF7F50 !important;
     color: #FFF !important;
 }
 
