@@ -28,7 +28,7 @@ header > .container-fluid > .collapse.navbar-collapse> .justify-content-start > 
 
 }
 header > .container-fluid > .collapse.navbar-collapse> .justify-content-start > .btn.btn-sm.btn-outline-secondary:hover{
-    background-color: orange;
+    background-color: #FF7F50;
     color: white;
     transition: 0.5s;
 }

@@ -99,25 +99,29 @@ function validarProdutoParaRemocao(idNomeProduto, idCodProduto, idQtidadeProduto
     }
 }
 function removerProduto(produto, codig, qtidade) {
-    let removerProduto = { quantidade: qtidade };
+    let posicao = 0;
+    let verificar = 0;
     if (typeof (Storage) !== "undefined") {
-        estoque = localStorage.getItem("estoque");
+        let estoque = [];
+        estoque = JSON.parse(localStorage.getItem("estoque"));
         if (estoque == null) {
             alert("Não há itens cadastrados no estoque");
         } // Nenhum produto ainda foi cadastrado
         else {
-            estoque = JSON.parse(estoque);
-            var busca = estoque.indexOf(removerProduto);
-            if (busca !== -1) {
-                window.localStorage.removeItem("estoque", JSON.stringify(estoque))
-                alert(+ qtidade + " unidades do produto " + produto + "foram removidas do estoque");
-                removerItemEstoque("totalEstoque");
-                location.reload();
+            estoque.forEach((item) => {
+                if (produto == item.nome && codig == item.codigo && qtidade == item.quantidade) {
+                    estoque.splice(posicao,1);
+                    localStorage.setItem("estoque", JSON.stringify(estoque));
+                    alert(+ qtidade + " unidades do produto " + produto + " foram removidas do estoque!");
+                    atualizarRemocaoEstoque("totalEstoque");
+                    location.reload();
+                    verificar = 1;
+                }
+                posicao++;
+            });
+            if (verificar !=1) {
+                alert('Não há itens cadastrados com os dados informados. Por favor, tente novamente.');
             }
-            else {
-                alert("Não há itens cadastrados com os dados informados. Tente novamente.")
-            }
-
         }
     }
     else alert("A versão do seu navegador é muito antiga. Por isso, não será possível executar essa aplicação");
@@ -164,15 +168,26 @@ function listarEstoque() {
             window.location.href = '../pages/softwareTelaPrincipal.html';
         }  
         else {
-
+            posicao = -1;
             estoque = JSON.parse(estoque);
-            document.write("<h1>Estoque:</h1>")
+            let titulo = document.querySelector('#titulo');
+            titulo.innerHTML = "Seu estoque:";
             estoque.forEach(produto => {
-                document.write("<ul>");
-                document.write("<li>Nome do produto: " + produto.nome + "</li>");
-                document.write("<li>Código do produto: " + produto.codigo + "</li>");
-                document.write("<li>Quantidade no estoque: " + produto.quantidade + "</li>");
-                document.write("</ul>");
+                let listaDoEstoque = document.querySelector('#listaDoEstoque');
+                listaDoEstoque.innerHTML += `
+                <li>Nome do produto: <span></span></li>
+                <li>Código do produto: <span></span></li>
+                <li>Quantidade no estoque: <span></span></li>
+                <p id="divisao">====================</p>
+                `;
+
+                let colocarValores = document.querySelectorAll('#listaDoEstoque span');
+                posicao++;
+                colocarValores[posicao].innerHTML =  produto.nome;
+                posicao++;
+                colocarValores[posicao].innerHTML =  produto.codigo;
+                posicao++;
+                colocarValores[posicao].innerHTML =  produto.quantidade;
             });
         }
     }
@@ -190,7 +205,7 @@ function apagarDadosEstoque() {
             localStorage.removeItem("totalEstoque");
             localStorage.removeItem("estoque");
             carregarTotalEstoque("totalEstoque");
-            alert("Seu estoque foi erado, é necessário inserir todos os dados novamente.");
+            alert("Seu estoque foi errado, é necessário inserir todos os dados novamente.");
             location.reload();
         }
         else{
