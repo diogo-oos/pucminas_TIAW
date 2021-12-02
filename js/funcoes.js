@@ -113,6 +113,7 @@ function removerProduto(produto, codig, qtidade) {
                     estoque.splice(posicao,1);
                     localStorage.setItem("estoque", JSON.stringify(estoque));
                     alert(+ qtidade + " unidades do produto " + produto + " foram removidas do estoque!");
+                    atualizarRemocaoEstoque("totalEstoque");
                     location.reload();
                     verificar = 1;
                 }
