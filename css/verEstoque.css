@@ -35,7 +35,7 @@ button {
 }
 
 #listaDoEstoque {
-    background-color: #FF7F50;
+    background-color: rgba(255, 127, 80, 0.795);
     border-radius: 10px;
     padding: 20px;
     box-shadow: 1px 4px 3px 0px;
