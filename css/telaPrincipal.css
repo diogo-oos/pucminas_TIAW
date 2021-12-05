@@ -1,0 +1,140 @@
+/*------------------------/ CONFIGURAÇÕES DO BODY /------------------------*/
+#software{
+ background-image: url("../imgs/bg-app-principal.jpg");
+ background-size:cover;
+ background-repeat: no-repeat;
+ background-attachment: fixed;
+}
+/*------------------------/ CONFIGURAÇÕES DO HEADER (CABECALHO) /------------------------*/
+.btn.btn-sm.btn-outline.sair:hover {
+    background-color: #FF7F50;
+    color: #FFF;
+}
+.btn.btn-sm.btn-outline.sair{
+    margin: 8px;
+    vertical-align: top;
+}
+.btn.btn-sm.btn-outline.sair{
+    transition: all 0.5s ease-out !important;
+}
+/*------------------------/ CONFIGURAÇÕES DOS PREENCHIMENTOS /------------------------*/
+.alinharRotulos {
+    text-align: right;
+}
+input, select{
+    margin-top: 5px;
+}
+table {
+    clear: both; 
+    background-color: coral;
+    border-radius: 10px; 
+    color:white;
+    padding: 10px;
+    width: 80%;
+    margin: 10px auto;   
+}
+/*------------------------/ CONFIGURAÇÕES DO TITULO /------------------------*/
+#titulo{
+    color:coral; 
+    font-weight: bold; 
+    font-size: 40px;
+    margin: 5px auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+/*------------------------/ CONFIGURAÇÕES DOS BOTÕES /------------------------*/
+.alinhaBtns {
+    width:30%;
+    padding:5px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 10px auto;
+    font-size: 0.9rem;
+}
+#cadastrar:hover{
+    background-color: rgba(5, 233, 36, 0.616);
+    color: white;
+    transition: all 0.4s ease-out;
+}
+#verEstoque:hover{
+    background-color: rgba(0, 0, 255, 0.89);
+    color: white;
+    transition: all 0.4s ease-out;
+}
+#removeItem:hover{
+    background-color: rgba(233, 5, 5, 0.616);
+    color: white;
+    transition: all 0.4s ease-out;
+}
+#limpar:hover{
+    background-color: black;
+    color: white;
+    transition: all 0.4s ease-out;
+}
+/*------------------------/ CONFIGURAÇÕES DO INDICADOR DE ITENS /------------------------*/
+.estoque> img{
+    max-width: 120px;
+    max-height: 120px;
+}
+.estoque {
+    width:170px; 
+    margin: 50px auto;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    background-color: rgba(18, 206, 12, 0.219);
+    box-shadow: 1px 4px 3px 0px;
+}
+/*------------------------/ CONFIGURAÇÕES MEDIA QUERIES /------------------------*/
+@media screen and (max-width:1000px){
+    #software{
+        background-image: url("../imgs/bg-app-principal.jpg");
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+       }
+    .alinhaBtns {
+        width: auto;
+        padding:5px;
+        border-radius: 10px;
+        cursor: pointer;
+        margin: 5px 5px;
+        font-size: 0.9rem;
+    }
+    #titulo{
+        color:coral; 
+        font-size: 30px;
+        margin: 5px auto;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        text-align: center;
+    }
+   
+   tr, td, select, option{
+        display: inline-block;
+        text-align: center;
+    }    
+    table {
+        clear: both; 
+        background-color: coral;
+        border-radius: 10px; 
+        color:white;
+        padding: 30px;
+        width: 100%;
+        margin: 5px auto; 
+        display: inline-block;  
+    }
+    #botoes{
+        display: inline;
+        text-align: center;
+        padding: 0px;
+        margin: 5px auto;
+    }
+    
+}
+#quadroFundo{
+    background-color: rgba(0, 0, 255, 0.082);
+    margin: 10px 10px;
+    padding: 5%;
+    border-radius: 10px;
+    box-shadow: 1px 4px 3px 0px;
+}

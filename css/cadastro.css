@@ -1,0 +1,146 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(../imgs/bg-cadastro.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+button, a{
+    transition: all .4s ease-out !important;
+}
+
+.main-head{
+    height: 150px;
+    background: #FFF;
+   
+}
+
+.sidenav {
+    height: 100%;
+    overflow-x: hidden;
+    padding-top: 20px;
+    background-image: url(../imgs/bg-cadastro-lat.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: fixed;
+}
+
+.login{
+    margin-left: 22%;
+}
+    
+.btn.btn-lg.btn-outline.login{
+    color: #FFF;
+}
+.btn.btn-lg.btn-outline.login:hover{
+    background-color: #FF7F50 !important;
+    color: #037075 !important;
+}
+
+.btn.btn-sm.btn-outline.voltar:hover{
+    background-color: #FF7F50;
+    color: #FFF;
+}
+
+.main {
+    padding: 0px 10px;
+}
+
+#msg{
+    display: none;
+    color: #00bb00;
+    background-color: #bbffbe;
+    padding: 10px;
+    border-radius: 4px
+}
+
+#olhoSenha{
+    cursor: pointer;
+}
+
+#olhoCortadoSenha{
+    display: none;
+    cursor: pointer;
+}
+
+#olhoConfirmarSenha{
+    cursor: pointer;
+}
+
+#olhoCortadoConfirmarSenha{
+    display: none;
+    cursor: pointer;
+}
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+    
+}
+
+@media screen and (max-width: 450px) {
+    .login-form{
+        margin-top: 10%;
+    }
+
+    .register-form{
+        margin-top: 10%;
+    }   
+}
+
+@media screen and (min-width: 768px){
+    header{
+        margin-left: 40%;
+    }
+
+    .main{
+        margin-left: 40%; 
+    }
+
+    .sidenav{
+        width: 40%;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+    }
+
+    .login-form{
+        margin-top: 35%;
+    }
+
+    .register-form{
+        margin-top: 20%;
+    }
+}
+
+
+.login-main-text{
+    margin-top: 20%;
+    padding: 60px;
+    color: #FFF;
+}
+
+.login-main-text h2{
+    font-weight: 300;
+}
+
+.form-control {
+    margin-bottom: 10px;
+}
+
+.btn.btn-lg.btn-black{
+    color: #000 !important;
+    margin-top: 5px;
+}
+
+.btn.btn-lg.btn-black:hover{
+    background-color: #FF7F50 !important;
+    color: #FFF !important;
+}
+
+#botao:disabled {
+    cursor: not-allowed;
+    pointer-events: all !important;
+}

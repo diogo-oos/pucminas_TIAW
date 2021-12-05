@@ -1,0 +1,53 @@
+body {
+    background-image: url(../imgs/bg-listaDoEstoque.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+button {
+    transition: all .4s ease-out !important;
+}
+
+.btn.btn-outline.buscar {
+    color: #FFF !important;
+    font-size: 0.7rem;
+}
+
+.btn.btn-outline.buscar:hover {
+    background-color: #FF7F50;
+    color: #FFF;
+}
+
+.navbar-brand {
+    color: #FFF !important;
+}
+
+#titulo {
+    text-align: center;
+    color: #FF7F50;
+}
+
+#listaDoEstoqueArea {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#listaDoEstoque {
+    background-color: rgba(255, 127, 80, 0.795);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 1px 4px 3px 0px;
+}
+
+#listaDoEstoque li{
+    list-style: none;
+    color: #FFF;
+}
+
+#divisao{
+    color: #FFF;
+}
+
+
