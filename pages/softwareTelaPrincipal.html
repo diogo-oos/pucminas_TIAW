@@ -21,7 +21,7 @@
     <header class="navbar navbar-expand-lg navbar-light" style="background-color: rgba(18, 206, 12, 0.219)">
         <div class="container-fluid">
             <a class="navbar-brand"><b><i>SiGEs </i></b></a>
-            <button onclick="sair()" class="btn btn-sm btn-outline sair" type="button"><i
+            <button onclick="sair()" class="btn btn-sm btn-outline-danger" type="button"><i
                     class="bi bi-arrow-left-circle" style="font-size: 1em; padding: 5px;"></i>Sair</button>
     </header>
 
@@ -104,10 +104,12 @@
                     <td colspan="2" align="center" id="botoes">
                         <input type="button" value="Cadastrar Item" class="alinhaBtns" id="cadastrar"
                             onclick="validarProduto('txtNomeProduto','txtCodProduto','qtidadeProduto')">
-                        <input type="button" value="Itens em Estoque" class="alinhaBtns" id="verEstoque"
+                        <input type="button" value="Itens no Estoque" class="alinhaBtns" id="verEstoque"
                             onclick="window.open('verEstoque.html','_self')">
-                        <input type="button" value="Remover Item" class="alinhaBtns" id="removeItem"
-                            onclick="validarProdutoParaRemocao('txtNomeProduto','txtCodProduto','qtidadeProduto')">
+                        <input type="button" value="Remover Itens" class="alinhaBtns" id="removeItem"
+                            onclick="validarRemoverItem('txtNomeProduto','txtCodProduto','qtidadeProduto')">
+                        <input type="button" value="Remover Produto" class="alinhaBtns" id="removeProduto"
+                            onclick="validarProdutoParaRemocao('txtNomeProduto','txtCodProduto')">
                         <input type="button" value="Zerar Estoque" class="alinhaBtns" id="limpar"
                             onclick="apagarDadosEstoque()">
                     </td>

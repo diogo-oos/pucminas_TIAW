@@ -1,8 +1,10 @@
 body {
-    background-image: url(../imgs/bg-listaDoEstoque.jpg);
+    background-image: url(https://image.freepik.com/vetores-gratis/fundo-elegante-com-textura-aquarela-verde-suave_1055-8764.jpg);
+    background-color: black ;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+     ;
 }
 
 button {
@@ -25,7 +27,7 @@ button {
 
 #titulo {
     text-align: center;
-    color: #FF7F50;
+    color: rgb(255, 83, 21);
 }
 
 #listaDoEstoqueArea {
@@ -35,9 +37,9 @@ button {
 }
 
 #listaDoEstoque {
-    background-color: #FF7F50;
+    background-color: rgb(255, 127, 80);
     border-radius: 10px;
-    padding: 20px;
+    padding: auto;
     box-shadow: 1px 4px 3px 0px;
 }
 

@@ -62,7 +62,12 @@ table {
     transition: all 0.4s ease-out;
 }
 #removeItem:hover{
-    background-color: rgba(233, 5, 5, 0.616);
+    background-color:rgb(216, 50, 50);
+    color: white;
+    transition: all 0.4s ease-out;
+}
+#removeProduto:hover{
+    background-color: red;
     color: white;
     transition: all 0.4s ease-out;
 }
