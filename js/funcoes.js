@@ -116,6 +116,12 @@ function removerProduto(produto, codig, qtidade) {
                     atualizarRemocaoEstoque("totalEstoque");
                     location.reload();
                     verificar = 1;
+
+                    if (posicao == 0) {
+                        localStorage.removeItem("totalEstoque");
+                        localStorage.removeItem("estoque");
+                        carregarTotalEstoque("totalEstoque");
+                    }
                 }
                 posicao++;
             });
