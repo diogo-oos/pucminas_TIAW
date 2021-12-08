@@ -8,7 +8,7 @@
 
 function sair() {
     localStorage.removeItem('token');
-    window.location.href = ('../pages/index.html');
+    window.location.href = ('../index.html');
 }
 //-----------------------------------------------------------------------------------------------------------
 // Função: verificarToken
