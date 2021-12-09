@@ -74,6 +74,9 @@ header > .container-fluid > .collapse.navbar-collapse> .justify-content-start > 
    
    
 }
+#lampadas-obj{
+    size: 500px;;
+}
 
 @media screen and (max-width:600px){
 
@@ -85,10 +88,8 @@ header > .container-fluid > .collapse.navbar-collapse> .justify-content-start > 
     }
   
     .flex > #card-obj > .row.g-0 > .col-md-2 > img{
-        position: relative;
-        left:50px;
-        border-bottom-left-radius: 500px;
-        border-top-right-radius: 50px;
+        
+       
         width: auto;
         height: auto;
     }
