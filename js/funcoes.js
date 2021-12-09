@@ -8,7 +8,7 @@
 
 function sair() {
     localStorage.removeItem('token');
-    window.location.href = ('../pages/index.html');
+    window.location.href = ('../index.html');
 }
 //-----------------------------------------------------------------------------------------------------------
 // Função: verificarToken
@@ -117,7 +117,7 @@ function removerProduto(produto, codig, qtidade) {
                     location.reload();
                     verificar = 1;
 
-                    if (posicao == 0) {
+                    if(posicao == 0) {
                         localStorage.removeItem("totalEstoque");
                         localStorage.removeItem("estoque");
                         carregarTotalEstoque("totalEstoque");
