@@ -23,11 +23,12 @@
 }
 input, select{
     margin-top: 5px;
+    border-radius: 5px;
 }
 table {
     clear: both; 
     background-color: coral;
-    border-radius: 10px; 
+    border-radius: 5px 10px 5px 10px; 
     color:white;
     padding: 10px;
     width: 80%;
@@ -79,7 +80,7 @@ table {
 .estoque {
     width:170px; 
     margin: 50px auto;
-    border-radius: 5px;
+    border-radius: 5px 10px 5px 10px;
     padding: 10px;
     text-align: center;
     background-color: rgba(18, 206, 12, 0.219);
@@ -116,7 +117,7 @@ table {
     table {
         clear: both; 
         background-color: coral;
-        border-radius: 10px; 
+        border-radius: 5px 10px 5px 10px; 
         color:white;
         padding: 30px;
         width: 100%;
@@ -132,8 +133,9 @@ table {
     
 }
 #quadroFundo{
+    margin: 30px;
     background-color: rgba(0, 0, 255, 0.082);
-    margin: 10px 10px;
+    border-radius: 5px 10px 5px 10px;
     padding: 5%;
     border-radius: 10px;
     box-shadow: 1px 4px 3px 0px;

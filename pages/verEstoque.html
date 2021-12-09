@@ -24,7 +24,7 @@
             <div class="container-fluid">
                 <a class="navbar-brand"><b><i>SiGEs </i></b></a>
                 <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Procura de Produtos"
+                    <input class="form-control me-2" type="search" placeholder="Nome do produto"
                         aria-label="Search">
                     <button class="btn btn-outline buscar" type="submit"><i class="bi bi-search"></i>Buscar</button>
                 </form>
@@ -35,8 +35,22 @@
     <main>
         <h1 id="titulo"></h1>
             <div id="listaDoEstoqueArea">
-                <ul id="listaDoEstoque">
-                </ul>
+                <table id="tabelaDoEstoque">
+                    <thead>
+                        <tr>
+                            <th>Nível do estoque</th>
+                            <th>ID do estoque</th>
+                            <th>Nome</th>
+                            <th>Descrição</th>
+                            <th>Preço unitário</th>
+                            <th>Quantidade em estoque</th>
+                            <th>Valor do estoque</th>
+                        </tr>
+                    </thead>
+                    <tbody id="conteudoDaTabela">
+
+                    </tbody>
+                </table>
             </div>
     </main>
 

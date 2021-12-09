@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 
 <head>
     <title>Estoque - Cadastro de novos produtos</title>
@@ -31,15 +31,35 @@
         <div id="titulo"><b>Cadastro de novos produtos</b></div>
         <form>
             <table>
+                <!--ID do estoque-->
+                <tr>
+                    <td class="alinharRotulos">ID do estoque:</td>
+                    <td><input id="txtIDestoque" type="text"></td>
+                </tr>
                 <!--Nome do produto-->
                 <tr>
                     <td class="alinharRotulos">Nome do produto:</td>
                     <td><input id="txtNomeProduto" type="text"></td>
                 </tr>
+                <!--Descrição do produto-->
+                <tr>
+                    <td class="alinharRotulos">Descrição do produto:</td>
+                    <td><input id="txtDescricaoProduto" type="text" placeholder="*Opcional"></td>
+                </tr>
+                <!-- preço unitário-->
+                <tr>
+                    <td class="alinharRotulos">Preço unitário:</td>
+                    <td><input id="txtPrecoProduto" type="text"></td>
+                </tr>
                 <!--Código do produto-->
                 <tr>
                     <td class="alinharRotulos">Código do produto:</td>
                     <td><input id="txtCodProduto" type="text"></td>
+                </tr>
+                <!--valor do estoque-->
+                <tr>
+                    <td class="alinharRotulos">Valor do estoque:</td>
+                    <td><input id="txtValorEstoque" type="text"></td>
                 </tr>
                 <!--Quantidade do produto-->
                 <tr>

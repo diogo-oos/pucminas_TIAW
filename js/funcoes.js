@@ -10,6 +10,13 @@ function sair() {
     localStorage.removeItem('token');
     window.location.href = ('../index.html');
 }
+
+/*window.onunload = destruirToken; 
+
+function destruirToken() {
+    localStorage.removeItem('token');
+}*/
+
 //-----------------------------------------------------------------------------------------------------------
 // Função: verificarToken
 // Verifica se foi feito o login antes do acesso à página, de acordo com um código token criado no localStorage
@@ -179,15 +186,20 @@ function listarEstoque() {
             let titulo = document.querySelector('#titulo');
             titulo.innerHTML = "Seu estoque:";
             estoque.forEach(produto => {
-                let listaDoEstoque = document.querySelector('#listaDoEstoque');
-                listaDoEstoque.innerHTML += `
-                <li>Nome do produto: <span></span></li>
-                <li>Código do produto: <span></span></li>
-                <li>Quantidade no estoque: <span></span></li>
-                <p id="divisao">====================</p>
+                let conteudoDaTabela = document.querySelector('#conteudoDaTabela');
+                conteudoDaTabela.innerHTML += `
+                <tr>
+                <td><span></span></td>
+                <td><span></span></td>
+                <td><span></span></td>
+                <td><span></span></td>
+                <td><span></span></td>
+                <td><span></span></td>
+                <td><span></span></td>
+                </tr>
                 `;
 
-                let colocarValores = document.querySelectorAll('#listaDoEstoque span');
+                let colocarValores = document.querySelectorAll('#conteudoDaTabela span');
                 posicao++;
                 colocarValores[posicao].innerHTML =  produto.nome;
                 posicao++;
