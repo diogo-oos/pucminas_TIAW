@@ -53,12 +53,14 @@ function validarProduto(idIDestoque, idNomeProduto, idDescricaoProduto, idPrecoP
     let estoque = JSON.parse(localStorage.getItem("estoque"));
     let verificar = 0;
 
-    estoque.forEach((item) =>{
-        if(IDestoque == item.IDDoestoque) {
-            alert("ID já cadastrado. Favor preencher um ID Diferente!");
-            verificar = 1;
-        }
-    });
+    if (estoque !== null) {
+        estoque.forEach((item) =>{
+            if(IDestoque == item.IDDoestoque) {
+                alert("ID já cadastrado. Favor preencher um ID Diferente!");
+                verificar = 1;
+            }
+        });
+    }
     
     if (IDestoque == "") {
         alert("ID do estoque não pode ficar em branco não pode estar em branco. Favor preenchê-lo!");
