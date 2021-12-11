@@ -313,12 +313,12 @@ function listarEstoque() {
                 posicao++;
                 colocarValores[posicao].innerHTML =  produto.quantidade;
                 posicao++;
-                colocarValores[posicao].innerHTML =  produto.valorInicialDoEstoque;
+                colocarValores[posicao].innerHTML =  `R$ ${produto.valorInicialDoEstoque}`;
 
                 let valorAtualDoEstoque = produto.precoDoProduto * produto.quantidade;
 
                 posicao++;
-                colocarValores[posicao].innerHTML =  valorAtualDoEstoque;
+                colocarValores[posicao].innerHTML =  `R$ ${valorAtualDoEstoque}`;
             });
         }
     }
