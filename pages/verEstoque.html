@@ -22,9 +22,8 @@
             <div class="container-fluid">
                 <a class="navbar-brand"><b><i>SiGEs </i></b></a>
                 <form class="d-flex" method="POST" id="form-pesquisa" action="">
-                    <input class="form-control me-2" type="search" placeholder="Nome do produto"
-                        aria-label="Search" id="pesquisa">
-                    <button class="btn btn-outline buscar" type="submit" onclick="busca('pesquisa')"><i class="bi bi-search"></i>Buscar</button>
+                    <input class="form-control me-2" type="text" placeholder="Nome do produto"
+                        aria-label="Search" id="pesquisa" onkeyup="Search()">
                 </form>
             </div>    
         </nav>    
@@ -49,6 +48,28 @@
 
             </tbody>
         </table>
+
+        <table class="table table-responsive" id="tabelaResultado">
+            <thead>
+                <tr id="linhaTituloResultado">
+                    <th>Nível</th>
+                    <th>ID do estoque</th>
+                    <th>Nome</th>
+                    <th>Descrição</th>
+                    <th>Preço unitário</th>
+                    <th>Código do produto</th>
+                    <th>Quantidade</th>
+                    <th>Valor inicial</th>
+                    <th>Valor atual</th>
+                </tr>
+            </thead>
+            <tbody id="itemEncontrado">
+
+            </tbody>
+        </table>
+
+        <div id="error">Não há itens cadastrados com esse nome</div>
+
     </main>
 
     <!--script bootstrap-->
@@ -58,8 +79,9 @@
     <!--link arquivo js-->
     <script src="../js/funcoes.js"></script>
     <script>
-        
         listarEstoque();
+        tabelaResultado.style.display = 'none';
+        error.style.display = 'none';
     </script>
 </body>
 
