@@ -42,16 +42,66 @@ function verificarToken() {
 // sucesso (todas as informações preenchidas), chama a função cadastrarProduto(...)
 // Retorno: nenhum
 //-----------------------------------------------------------------------------------------------------------
-function validarProduto(idNomeProduto, idCodProduto, idQtidadeProduto) {
+function validarProduto(idIDestoque, idNomeProduto, idDescricaoProduto, idPrecoProduto, idCodProduto, idQtidadeProduto) {
+    let IDestoque = document.getElementById(idIDestoque).value;
     let nome = document.getElementById(idNomeProduto).value;
+    let descricaoProduto = document.getElementById(idDescricaoProduto).value;
+    let precoProduto = document.getElementById(idPrecoProduto).value;
     let codigo = document.getElementById(idCodProduto).value;
     let qtidade = document.getElementById(idQtidadeProduto).value;
-    if (nome == "") {
+
+    let estoque = JSON.parse(localStorage.getItem("estoque"));
+    let verificar = 0;
+
+    if (estoque !== null) {
+        estoque.forEach((item) =>{
+            if(IDestoque == item.IDDoestoque) {
+                alert("ID já cadastrado. Favor preencher um ID Diferente!");
+                verificar = 1;
+            }
+        });
+    }
+    
+    if (IDestoque == "") {
+        alert("ID do estoque não pode ficar em branco não pode estar em branco. Favor preenchê-lo!");
+        verificar = 1;
+    }
+
+    else if (nome == "") {
         alert("Nome do produto não pode estar em branco. Favor preenchê-lo!");
-    } else if (codigo == "") {
+        verificar = 1;
+    }
+
+    else if (precoProduto == "") {
+        alert("O preço unitário não pode estar em branco. Favor preenchê-lo!");
+        verificar = 1;
+    } 
+
+    else if (precoProduto <= 0) {
+        alert("Valor do preço unitário inválido. Favor verificá-lo!");
+        verificar = 1;
+    }
+
+    else if (codigo == "") {
         alert("Código do produto não pode estar em branco. Favor preenchê-lo!");
-    } else {
-        cadastrarProduto(nome, codigo, parseInt(qtidade));
+        verificar = 1;
+    } 
+
+    else if (qtidade == "") {
+        alert("A quantidade do produto não pode estar em branco. Favor preenchê-lo!");
+        verificar = 1;
+    }
+
+    else if (qtidade <= 0) {
+        alert("A quantidade precisa ser maior que 0");
+        verificar = 1;
+    }
+
+    if (verificar == 0) {
+        let precoProdutoFloat = parseFloat(precoProduto);
+        let qtidadeInt = parseInt(qtidade);
+        let valorEstoqueInicial = precoProdutoFloat * qtidadeInt;
+        cadastrarProduto(IDestoque, nome, descricaoProduto, precoProdutoFloat, codigo, qtidadeInt,valorEstoqueInicial);
     }
 }
 //-----------------------------------------------------------------------------------------------------------
@@ -65,8 +115,17 @@ function validarProduto(idNomeProduto, idCodProduto, idQtidadeProduto) {
 // a função atualizarTotalEstoque()
 // Retorno: nenhum
 //-----------------------------------------------------------------------------------------------------------
-function cadastrarProduto(produto, codig, qtidade) {
-    let novoProduto = { nome: produto, codigo: codig, quantidade: qtidade };
+function cadastrarProduto(IDestoque, produto, descricaoProduto, precoProduto, codig, qtidade, valorEstoqueInicial) {
+    
+    let novoProduto = { 
+        IDDoestoque: IDestoque,
+        nome: produto, 
+        descricaoDoProduto: descricaoProduto,
+        precoDoProduto: precoProduto,
+        codigo: codig, 
+        quantidade: qtidade,
+        valorInicialDoEstoque: valorEstoqueInicial
+    };
     if (typeof (Storage) !== "undefined") {
         let estoque = localStorage.getItem("estoque");
         if (estoque == null) {
@@ -93,43 +152,71 @@ function cadastrarProduto(produto, codig, qtidade) {
 function atualizarTotalEstoque(idCampo) {
     localStorage.setItem("totalEstoque", ++document.getElementById(idCampo).innerHTML)
 }
-function validarProdutoParaRemocao(idNomeProduto, idCodProduto, idQtidadeProduto) {
-    let nome = document.getElementById(idNomeProduto).value;
-    let codigo = document.getElementById(idCodProduto).value;
+function validarProdutoParaRemocao(idIDestoque, idQtidadeProduto) {
+    let IDestoque = document.getElementById(idIDestoque).value;
     let qtidade = document.getElementById(idQtidadeProduto).value;
-    if (nome == "") {
-        alert("Nome do produto não pode estar em branco. Favor preenchê-lo!");
-    } else if (codigo == "") {
-        alert("Código do produto não pode estar em branco. Favor preenchê-lo!");
-    } else {
-        removerProduto(nome, codigo, parseInt(qtidade));
+
+    if (IDestoque == "") {
+        alert("O ID do estoque não pode estar em branco. Favor preenchê-lo!");
+    } 
+    
+    else {
+        removerProduto(IDestoque, parseInt(qtidade));
     }
 }
-function removerProduto(produto, codig, qtidade) {
+function removerProduto(IDestoque, qtidade) {
     let posicao = 0;
     let verificar = 0;
     if (typeof (Storage) !== "undefined") {
-        let estoque = [];
-        estoque = JSON.parse(localStorage.getItem("estoque"));
+        let estoque = JSON.parse(localStorage.getItem("estoque"));
         if (estoque == null) {
             alert("Não há itens cadastrados no estoque");
         } // Nenhum produto ainda foi cadastrado
         else {
             estoque.forEach((item) => {
-                if (produto == item.nome && codig == item.codigo && qtidade == item.quantidade) {
-                    estoque.splice(posicao,1);
+                if (IDestoque == item.IDDoestoque && qtidade == item.quantidade) {
+                    let confirmarAcao = window.confirm("Você está prestes a apagar TODOS os itens desse estoque. Deseja continuar?"); 
+                    if (confirmarAcao) {
+                        estoque.splice(posicao,1);
+                        localStorage.setItem("estoque", JSON.stringify(estoque));
+                        alert("Todas as unidades do produto " + item.nome + " foram removidas do estoque!");
+                        atualizarRemocaoEstoque("totalEstoque");
+                        location.reload();
+    
+                        if(posicao == 0) {
+                            localStorage.removeItem("totalEstoque");
+                            localStorage.removeItem("estoque");
+                            carregarTotalEstoque("totalEstoque");
+                        }
+                    }
+
+                    else {
+                        location.reload();
+                    }
+                    verificar = 1;
+                    
+                }
+
+                else if (IDestoque == item.IDDoestoque && qtidade < item.quantidade && qtidade > 0) {
+                    item.quantidade -= qtidade;
                     localStorage.setItem("estoque", JSON.stringify(estoque));
-                    alert(+ qtidade + " unidades do produto " + produto + " foram removidas do estoque!");
-                    atualizarRemocaoEstoque("totalEstoque");
+                    alert(+ qtidade + " unidades do produto " + item.nome + " foram removidas do estoque!");
                     location.reload();
                     verificar = 1;
-
-                    if(posicao == 0) {
-                        localStorage.removeItem("totalEstoque");
-                        localStorage.removeItem("estoque");
-                        carregarTotalEstoque("totalEstoque");
-                    }
                 }
+
+                else if (IDestoque == item.IDDoestoque && qtidade > item.quantidade) {
+                    alert("Você não tem produtos suficientes nesse estoque. Favor cadastrar mais produtos!");
+                    location.reload();
+                    verificar = 1;
+                }
+
+                else if (IDestoque == item.IDDoestoque && qtidade <= 0) {
+                    alert("Digite uma quantidade maior que 0 por favor!");
+                    location.reload();
+                    verificar = 1;
+                }
+
                 posicao++;
             });
             if (verificar !=1) {
@@ -183,12 +270,12 @@ function listarEstoque() {
         else {
             posicao = -1;
             estoque = JSON.parse(estoque);
-            let titulo = document.querySelector('#titulo');
-            titulo.innerHTML = "Seu estoque:";
             estoque.forEach(produto => {
                 let conteudoDaTabela = document.querySelector('#conteudoDaTabela');
                 conteudoDaTabela.innerHTML += `
                 <tr>
+                <td><span></span></td>
+                <td><span></span></td>
                 <td><span></span></td>
                 <td><span></span></td>
                 <td><span></span></td>
@@ -201,11 +288,37 @@ function listarEstoque() {
 
                 let colocarValores = document.querySelectorAll('#conteudoDaTabela span');
                 posicao++;
+                if (produto.quantidade >= 50){
+                    colocarValores[posicao].innerHTML = '<i class="bi bi-caret-up-fill"></i>';
+                }
+
+                else if (produto.quantidade > 10 && produto.quantidade <50) {
+                    colocarValores[posicao].innerHTML = '<i class="bi bi-caret-right-fill"></i>';
+                }
+
+                else if (produto.quantidade <= 10) {
+                    colocarValores[posicao].innerHTML = '<i class="bi bi-caret-down-fill"></i>';
+                }
+                
+                posicao++;
+                colocarValores[posicao].innerHTML =  produto.IDDoestoque;
+                posicao++;
                 colocarValores[posicao].innerHTML =  produto.nome;
+                posicao++;
+                colocarValores[posicao].innerHTML =  produto.descricaoDoProduto;
+                posicao++;
+                colocarValores[posicao].innerHTML =  `R$ ${produto.precoDoProduto}`;
                 posicao++;
                 colocarValores[posicao].innerHTML =  produto.codigo;
                 posicao++;
                 colocarValores[posicao].innerHTML =  produto.quantidade;
+                posicao++;
+                colocarValores[posicao].innerHTML =  `R$ ${produto.valorInicialDoEstoque}`;
+
+                let valorAtualDoEstoque = produto.precoDoProduto * produto.quantidade;
+
+                posicao++;
+                colocarValores[posicao].innerHTML =  `R$ ${valorAtualDoEstoque}`;
             });
         }
     }
@@ -217,20 +330,23 @@ function listarEstoque() {
 //-----------------------------------------------------------------------------------------------------------
 
 function apagarDadosEstoque() {
-    if (typeof ("estoque") !== "undefined") {
-        let confirmAction = window.confirm('Essa ação irá apagar TODOS os itens do estoque e não será possível recuperar. Deseja continuar?');
-        if (confirmAction) {
-            localStorage.removeItem("totalEstoque");
-            localStorage.removeItem("estoque");
-            carregarTotalEstoque("totalEstoque");
-            alert("Seu estoque foi errado, é necessário inserir todos os dados novamente.");
-            location.reload();
+    let estoque = localStorage.getItem("estoque");
+    console.log(estoque);
+        if (estoque === null) {
+            alert("Não há dados a serem excluídos verifique seu estoque.");
         }
-        else{
-            location.reload();
+
+        else {
+            let confirmarAcao = window.confirm('Essa ação irá apagar TODOS os itens do estoque e não será possível recuperar. Deseja continuar?');
+            
+            if (confirmarAcao) {
+                localStorage.removeItem("totalEstoque");
+                localStorage.removeItem("estoque");
+                carregarTotalEstoque("totalEstoque");
+                location.reload();
+            }
+            else{
+                location.reload();
+            }
         }
-    }
-    else {
-        alert("Não há dados a serem excluídos verifique seu estoque.")
-    }
 }
