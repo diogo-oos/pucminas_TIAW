@@ -3,6 +3,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 button {
@@ -24,8 +25,11 @@ button {
 }
 
 #titulo {
+    color:coral; 
+    font-weight: bold; 
+    font-size: 40px;
+    margin: 5px auto;
     text-align: center;
-    color: #FF7F50;
 }
 
 #listaDoEstoqueArea {
@@ -51,6 +55,19 @@ button {
     color: #FFF;
 }
 
+/*REGRAS PARA OS ICONES QUE DEFINEM OS NÍVEIS DO ESTOQUE*/
+
+.bi.bi-caret-up-fill {
+    color: green;
+}
+
+.bi.bi-caret-right-fill {
+    color: yellow;
+}
+
+.bi.bi-caret-down-fill {
+    color: red;
+}
 
 
 

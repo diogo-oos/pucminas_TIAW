@@ -4,6 +4,7 @@
  background-size:cover;
  background-repeat: no-repeat;
  background-attachment: fixed;
+ font-family: Arial, Helvetica, sans-serif;
 }
 /*------------------------/ CONFIGURAÇÕES DO HEADER (CABECALHO) /------------------------*/
 .btn.btn-sm.btn-outline.sair:hover {
@@ -40,8 +41,8 @@ table {
     font-weight: bold; 
     font-size: 40px;
     margin: 5px auto;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
+    box-shadow: 1px 1px 1px 1px;
 }
 /*------------------------/ CONFIGURAÇÕES DOS BOTÕES /------------------------*/
 .alinhaBtns {

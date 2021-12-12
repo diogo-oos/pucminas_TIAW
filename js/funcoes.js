@@ -270,8 +270,6 @@ function listarEstoque() {
         else {
             posicao = -1;
             estoque = JSON.parse(estoque);
-            let titulo = document.querySelector('#titulo');
-            titulo.innerHTML = "Seu estoque:";
             estoque.forEach(produto => {
                 let conteudoDaTabela = document.querySelector('#conteudoDaTabela');
                 conteudoDaTabela.innerHTML += `
