@@ -274,7 +274,7 @@ function listarEstoque() {
                 let conteudoDaTabela = document.querySelector('#conteudoDaTabela');
                 conteudoDaTabela.innerHTML += `
                 <tr>
-                <td></td>
+                <td id="status"></td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -289,15 +289,15 @@ function listarEstoque() {
                 let colocarValores = document.querySelectorAll('#conteudoDaTabela td');
                 posicao++;
                 if (produto.quantidade >= 50) {
-                    colocarValores[posicao].innerHTML = '<i class="bi bi-caret-up-fill"></i>';
+                    colocarValores[posicao].innerHTML = '<i class="bi bi-check-circle-fill"></i>';
                 }
 
                 else if (produto.quantidade > 10 && produto.quantidade < 50) {
-                    colocarValores[posicao].innerHTML = '<i class="bi bi-caret-right-fill"></i>';
+                    colocarValores[posicao].innerHTML = '<i class="bi bi-exclamation-circle-fill"></i>';
                 }
 
                 else if (produto.quantidade <= 10) {
-                    colocarValores[posicao].innerHTML = '<i class="bi bi-caret-down-fill"></i>';
+                    colocarValores[posicao].innerHTML = '<i class="bi bi-dash-circle-fill"></i>';
                 }
 
                 posicao++;
