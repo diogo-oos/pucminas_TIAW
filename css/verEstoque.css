@@ -116,3 +116,13 @@ table {
 .bi.bi-caret-down-fill {
     color: red;
 }
+
+/*REGRAS PARA A MENSAGEM DE ERRO AO PROCURAR PRODUTOS*/
+
+#error {
+    display: none;
+    color: #ff0000;
+    background-color: #ffbbbb;
+    padding: 10px;
+    border-radius: 4px;
+}
