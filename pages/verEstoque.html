@@ -30,10 +30,10 @@
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                         <input class="form-control me-2" type="text" placeholder="Nome do produto" aria-label="Search"
-                            id="pesquisa" onkeyup="Search()">
+                            id="pesquisa" onkeyup="Pesquisar()">
 
                         <a href="softwareTelaPrincipal.html"><button type="button" class="btn btn-outline-warning"
-                            id="btn-voltar">Voltar</button></a>
+                                id="btn-voltar">Voltar</button></a>
                     </ul>
                 </div>
             </div>
@@ -41,43 +41,26 @@
     </header>
 
     <main class="container">
-        <table class="table table-responsive" id="tabelaDoEstoque">
-            <thead>
-                <tr id="linhaTitulo">
-                    <th>Status</th>
-                    <th>ID</th>
-                    <th>Nome</th>
-                    <th>Descrição</th>
-                    <th>Preço Unitário</th>
-                    <th>Código</th>
-                    <th>Quantidade</th>
-                    <th>Valor Inicial</th>
-                    <th>Valor Atual</th>
-                </tr>
-            </thead>
-            <tbody id="conteudoDaTabela">
+        <section>
+            <table class="table table-responsive" id="tabelaDoEstoque">
+                <thead>
+                    <tr id="linhaTitulo">
+                        <th>Status</th>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Descrição</th>
+                        <th>Preço Unitário</th>
+                        <th>Código</th>
+                        <th>Quantidade</th>
+                        <th>Valor Inicial</th>
+                        <th>Valor Atual</th>
+                    </tr>
+                </thead>
+                <tbody id="conteudoDaTabela">
 
-            </tbody>
-        </table>
-
-        <table class="table table-responsive" id="tabelaResultado">
-            <thead>
-                <tr id="linhaTituloResultado">
-                    <th>Nível</th>
-                    <th>ID do estoque</th>
-                    <th>Nome</th>
-                    <th>Descrição</th>
-                    <th>Preço unitário</th>
-                    <th>Código do produto</th>
-                    <th>Quantidade</th>
-                    <th>Valor inicial</th>
-                    <th>Valor atual</th>
-                </tr>
-            </thead>
-            <tbody id="itemEncontrado">
-
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        </section>
 
         <div id="error">Não há itens cadastrados com esse nome</div>
 

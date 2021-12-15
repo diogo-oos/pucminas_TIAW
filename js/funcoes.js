@@ -370,86 +370,38 @@ function busca(idNome) {
 
 //FUNÇÃO DE BUSCA
 
-const Search = () => {
+const Pesquisar = () => {
     if (typeof (Storage) !== "undefined") {
-        const texto = document.getElementById('pesquisa').value;
+        const texto = document.querySelector('#pesquisa').value.toUpperCase();
 
-        let tabelaResultado = document.getElementById('tabelaResultado');
-
-        let error = document.getElementById('error');
+        let error = document.querySelector('#error');
 
         let estoque = JSON.parse(localStorage.getItem("estoque"));
 
-        posicao = -1;
+        let linhaDaTabela = document.querySelectorAll('#tabelaDoEstoque tr');
+
+        posicao = 1;
+
+        let verificar = 0;
 
         estoque.forEach(produto => {
-            if (texto == produto.nome) {
+            if (produto.nome.toUpperCase().includes(texto)) {
+                linhaDaTabela[posicao].style.display = '';
+                verificar = 1;
                 error.style.display = 'none';
-                tabelaDoEstoque.style.display = 'none';
-                tabelaResultado.style.display = '';
-                
-                let itemEncontrado = document.querySelector('#itemEncontrado');
-                itemEncontrado.innerHTML += `
-                    <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    </tr>
-                    `;
-
-                let colocarValores = document.querySelectorAll('#itemEncontrado td');
-                posicao++;
-                if (produto.quantidade >= 50) {
-                    colocarValores[posicao].innerHTML = '<i class="bi bi-caret-up-fill"></i>';
-                }
-
-                else if (produto.quantidade > 10 && produto.quantidade < 50) {
-                    colocarValores[posicao].innerHTML = '<i class="bi bi-caret-right-fill"></i>';
-                }
-
-                else if (produto.quantidade <= 10) {
-                    colocarValores[posicao].innerHTML = '<i class="bi bi-caret-down-fill"></i>';
-                }
-
-                posicao++;
-                colocarValores[posicao].innerHTML = produto.IDDoestoque;
-                posicao++;
-                colocarValores[posicao].innerHTML = produto.nome;
-                posicao++;
-                colocarValores[posicao].innerHTML = produto.descricaoDoProduto;
-                posicao++;
-                colocarValores[posicao].innerHTML = `R$ ${produto.precoDoProduto}`;
-                posicao++;
-                colocarValores[posicao].innerHTML = produto.codigo;
-                posicao++;
-                colocarValores[posicao].innerHTML = produto.quantidade;
-                posicao++;
-                colocarValores[posicao].innerHTML = `R$ ${produto.valorInicialDoEstoque}`;
-
-                posicao++;
-
-                let valorAtualDoEstoque = produto.precoDoProduto * produto.quantidade;
-
-                colocarValores[posicao].innerHTML = `R$ ${valorAtualDoEstoque}`;
-
             }
             else {
-                tabelaDoEstoque.style.display = 'none';
-                error.style.display = '';
+                linhaDaTabela[posicao].style.display = 'none';
+                if (verificar == 0)
+                error.style.display = 'inline';
             }
+            posicao++;
         });
 
         if (texto == "") {
-            tabelaResultado.style.display = 'none';
-            tabelaDoEstoque.style.display = '';
             error.style.display = 'none';
-            location.reload();
+            for (let i = 0; i<=estoque.length; i++)
+            linhaDaTabela[i].style.display = '';
         }
     }
     else alert("A versão do seu navegador é muito antiga. Por isso, não será possível visualizar o estoque!");

@@ -88,9 +88,7 @@ table {
       position: relative;
       width: 100%;
     }
-    #tabelaDoEstoque{
-       ;
-    }
+
     .table-responsive thead, .table-responsive tbody,
     .table-responsive th, .table-responsive td, .table-responsive tr {
       display: block;
@@ -130,4 +128,13 @@ table {
   
 }
 
+/*REGRAS PARA A MENSAGEM DE ERRO AO PROCURAR PRODUTOS*/
+
+#error {
+    display: none;
+    color: #ff0000;
+    background-color: #ffbbbb;
+    padding: 10px;
+    border-radius: 4px;
+}
 
