@@ -110,9 +110,6 @@ table {
 
 /*-------------------------------/REGRAS DA TABELA PARA TELAS MENORES/--------------------------------*/
 @media screen and (max-width:1000px){
-    nav{
-        
-    }
     #pesquisa{
         position: absolute;
         height: 50%;
@@ -174,5 +171,18 @@ table {
         font-size: x-large;
         position: none !important;
         
+    }
+}
+
+@media screen and (min-width:1700px) {
+    nav{
+        position: relative;
+    }
+    #pesquisa{
+        position: absolute;
+        height: 50%;
+        width: 50%;
+        transform: translate(-50%, -50%);
+        margin-left: 42.7%;
     }
 }
