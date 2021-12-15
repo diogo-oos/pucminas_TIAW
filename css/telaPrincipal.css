@@ -14,8 +14,6 @@
 .btn.btn-sm.btn-outline.sair{
     margin: 8px;
     vertical-align: top;
-}
-.btn.btn-sm.btn-outline.sair{
     transition: all 0.5s ease-out !important;
 }
 /*------------------------/ CONFIGURAÇÕES DOS PREENCHIMENTOS /------------------------*/

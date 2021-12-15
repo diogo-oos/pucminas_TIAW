@@ -5,39 +5,48 @@ body {
     background-size: cover;
     background-attachment: fixed;
 }
-.btn.btn-outline.buscar:hover {
+/*-------------------------------/ CONFIGURAÇÕES BARRA CABEÇALHO /--------------------------------*/
+nav > .container-fluid > .navbar-brand{
+    color: black;
+}
+nav > .container-fluid > .collapse.navbar-collapse > .navbar-nav.me-auto.mb-2.mb-lg-0 > .nav-item > .nav-link:hover{
+    color: white;
+    transition: 0.5s;
+}
+nav > .container-fluid > .collapse.navbar-collapse > .navbar-nav.me-auto.mb-2.mb-lg-0 > .nav-item > .nav-link:target{
+    color: orange;
+}
+nav > .container-fluid > .collapse.navbar-collapse> .justify-content-start > .btn.btn-sm.btn-outline-secondary{
+    color: black;
+    border: none
+
+}
+nav > .container-fluid > .collapse.navbar-collapse> .justify-content-start > .btn.btn-sm.btn-outline-secondary:hover{
+    background-color: #FF7F50;
+    color: white;
+    transition: 0.5s;
+}
+nav{
+    position: relative;
+}
+#pesquisa{
+    position: absolute;
+    height: 50%;
+    width: 50%;
+    transform: translate(-50%, -50%);
+    margin-left: 35%;
+}
+#btn-voltar{
+    color: #000;
+    margin: 8px;
+    transition: all 0.5s ease-out;   
+    vertical-align: top;
+    float: right;
+}
+#btn-voltar:hover{
     background-color: #FF7F50;
     color: #FFF;
 }
-
-/*-------------------------------/ CONFIGURAÇÕES BARRA CABEÇALHO /--------------------------------*/
-.navbar-brand {
-    color: black;
-    font-size: 30px;
-}
-#ulPesquisa > #pesquisa{
-    background-color: rgb(206, 202, 202);
-    margin-left: 10%;
-    margin-right: 20% !important;
-    text-align: center;
-    border-color: white;
-    width: 45rem;
-}
-#ulPesquisa{
-    position: absolute;
-    left:35% ;
-    float :right;
-}
-#btn-voltar{
-    border-color: blue;
-    color: blue;
-    margin: 5px 10px;
-    transition: all .4s ease-out;   
-}
-#navCollapse{
-    float :right;
-}
-
 /*-------------------------------/ CONFIGURAÇÕES DO TITULOS DA TABELA /--------------------------------*/
 table {
     max-width: 100%;
@@ -76,6 +85,7 @@ table {
     line-height: 20px;
     text-align: left;
     vertical-align: middle;
+    background-color: white;
 }
 .table thead th {
     font-weight: normal;
@@ -86,10 +96,6 @@ table {
     color: #fff;
     font-size: 15px;
 }
-#conteudoDaTabela{
-    background-color: white;
-}
-
 /*-------------------------------/REGRAS PARA A MENSAGEM DE ERRO AO PROCURAR PRODUTOS/--------------------------------*/
 #error {
     display: none;
@@ -104,10 +110,16 @@ table {
 
 /*-------------------------------/REGRAS DA TABELA PARA TELAS MENORES/--------------------------------*/
 @media screen and (max-width:1000px){
-    .navbar-brand, #pesquisa{
-        display: block;
-        margin-right: auto;
-        margin-left: auto;
+    nav{
+        
+    }
+    #pesquisa{
+        position: absolute;
+        height: 50%;
+        width: 50%;
+        transform: translate(-50%, -50%);
+        margin-left: 25%;
+        margin-top: 25px;
     }
     #btn-voltar{
         margin-left: 40%;
@@ -163,5 +175,4 @@ table {
         position: none !important;
         
     }
-  
 }

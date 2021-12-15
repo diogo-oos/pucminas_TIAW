@@ -11,23 +11,23 @@ body{
     background-size: cover;
     background-attachment: fixed;
 }
-/*------------------------/ CONFIGURAÇÕES DO HEADER (CABECALHO) /------------------------*/
-header > .container-fluid > .navbar-brand{
+/*------------------------/ CONFIGURAÇÕES DA BARRA DE NAVEGAÇÃO /------------------------*/
+nav > .container-fluid > .navbar-brand{
  color: black;
 }
-header > .container-fluid > .collapse.navbar-collapse > .navbar-nav.me-auto.mb-2.mb-lg-0 > .nav-item > .nav-link:hover{
+nav > .container-fluid > .collapse.navbar-collapse > .navbar-nav.me-auto.mb-2.mb-lg-0 > .nav-item > .nav-link:hover{
     color: white;
     transition: 0.5s;
 }
-header > .container-fluid > .collapse.navbar-collapse > .navbar-nav.me-auto.mb-2.mb-lg-0 > .nav-item > .nav-link:target{
+nav > .container-fluid > .collapse.navbar-collapse > .navbar-nav.me-auto.mb-2.mb-lg-0 > .nav-item > .nav-link:target{
     color: orange;
 }
-header > .container-fluid > .collapse.navbar-collapse> .justify-content-start > .btn.btn-sm.btn-outline-secondary{
+nav > .container-fluid > .collapse.navbar-collapse> .justify-content-start > .btn.btn-sm.btn-outline-secondary{
     color: black;
     border: none
 
 }
-header > .container-fluid > .collapse.navbar-collapse> .justify-content-start > .btn.btn-sm.btn-outline-secondary:hover{
+nav > .container-fluid > .collapse.navbar-collapse> .justify-content-start > .btn.btn-sm.btn-outline-secondary:hover{
     background-color: #FF7F50;
     color: white;
     transition: 0.5s;
