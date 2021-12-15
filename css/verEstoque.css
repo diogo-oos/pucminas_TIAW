@@ -8,6 +8,7 @@ body {
 /*-------------------------------/ CONFIGURAÇÕES BARRA CABEÇALHO /--------------------------------*/
 nav > .container-fluid > .navbar-brand{
     color: black;
+    font-size:30px;
 }
 nav > .container-fluid > .collapse.navbar-collapse > .navbar-nav.me-auto.mb-2.mb-lg-0 > .nav-item > .nav-link:hover{
     color: white;
@@ -35,6 +36,7 @@ nav{
     width: 50%;
     transform: translate(-50%, -50%);
     margin-left: 35%;
+    text-align: center;
 }
 #btn-voltar{
     color: #000;
@@ -42,9 +44,10 @@ nav{
     transition: all 0.5s ease-out;   
     vertical-align: top;
     float: right;
+    font-size: large;
 }
 #btn-voltar:hover{
-    background-color: #FF7F50;
+    background-color: #223db4;
     color: #FFF;
 }
 /*-------------------------------/ CONFIGURAÇÕES DO TITULOS DA TABELA /--------------------------------*/
@@ -66,7 +69,7 @@ table {
 }
 
 .bi.bi-exclamation-circle-fill{
-    color: rgb(161, 161, 0);
+    color: rgb(240, 164, 0);
 }
 
 .bi.bi-dash-circle-fill{
