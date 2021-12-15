@@ -393,15 +393,15 @@ const Pesquisar = () => {
             else {
                 linhaDaTabela[posicao].style.display = 'none';
                 if (verificar == 0)
-                error.style.display = 'inline';
+                    error.style.display = 'inline';
             }
             posicao++;
         });
 
         if (texto == "") {
             error.style.display = 'none';
-            for (let i = 0; i<=estoque.length; i++)
-            linhaDaTabela[i].style.display = '';
+            for (let i = 0; i <= estoque.length; i++)
+                linhaDaTabela[i].style.display = '';
         }
     }
     else alert("A versão do seu navegador é muito antiga. Por isso, não será possível visualizar o estoque!");

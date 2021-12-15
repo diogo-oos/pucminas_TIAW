@@ -1,3 +1,4 @@
+/*-------------------------------/ CONFIGURAÇÕES GERAIS /--------------------------------*/
 body {
     background-image: url(../imgs/bg-verEstque.jpg);
     background-repeat: no-repeat;
@@ -8,23 +9,36 @@ body {
     background-color: #FF7F50;
     color: #FFF;
 }
+
+/*-------------------------------/ CONFIGURAÇÕES BARRA CABEÇALHO /--------------------------------*/
 .navbar-brand {
     color: black;
     font-size: 30px;
 }
-#pesquisa{
+#ulPesquisa > #pesquisa{
     background-color: rgb(206, 202, 202);
     margin-left: 10%;
     margin-right: 20% !important;
     text-align: center;
     border-color: white;
+    width: 45rem;
+}
+#ulPesquisa{
+    position: absolute;
+    left:35% ;
+    float :right;
 }
 #btn-voltar{
     border-color: blue;
     color: blue;
     margin: 5px 10px;
-    transition: all .4s ease-out
+    transition: all .4s ease-out;   
 }
+#navCollapse{
+    float :right;
+}
+
+/*-------------------------------/ CONFIGURAÇÕES DO TITULOS DA TABELA /--------------------------------*/
 table {
     max-width: 100%;
     background-color: transparent;
@@ -32,11 +46,12 @@ table {
     border-spacing: 0;
     margin: 40px auto;
 }
-/*REGRAS PARA OS ICONES QUE DEFINEM OS NÍVEIS DO ESTOQUE*/
 #status{
     text-align: center;
     font-size: x-large;
 }
+/*-------------------------------/REGRAS PARA OS ICONES QUE DEFINEM OS NÍVEIS DO ESTOQUE/--------------------------------*/
+
 .bi.bi-check-circle-fill {
     color: green;
 }
@@ -49,6 +64,7 @@ table {
     color: red;
 }
 
+/*-------------------------------/ CONFIGURAÇÕES DO CONTEUDO DA TABELA /--------------------------------*/
 .table {
     border-bottom: black solid 1px;
     width: 100%;
@@ -73,8 +89,21 @@ table {
 #conteudoDaTabela{
     background-color: white;
 }
-/*REGRAS DA TABELA PARA TELAS MENORES*/
-@media (max-width: 767px) { 
+
+/*-------------------------------/REGRAS PARA A MENSAGEM DE ERRO AO PROCURAR PRODUTOS/--------------------------------*/
+#error {
+    display: none;
+    color: red;
+    background-color: #ffbbbb;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: x-large;
+    position: relative;
+    left: 30%;  
+}
+
+/*-------------------------------/REGRAS DA TABELA PARA TELAS MENORES/--------------------------------*/
+@media screen and (max-width:1000px){
     .navbar-brand, #pesquisa{
         display: block;
         margin-right: auto;
@@ -125,16 +154,14 @@ table {
         text-align: left;
         vertical-align: middle;
     }
+    #error{
+        float: left;
+        color: red;
+        background-color: #ffbbbb;
+        border-radius: 4px;
+        font-size: x-large;
+        position: none !important;
+        
+    }
   
 }
-
-/*REGRAS PARA A MENSAGEM DE ERRO AO PROCURAR PRODUTOS*/
-
-#error {
-    display: none;
-    color: #ff0000;
-    background-color: #ffbbbb;
-    padding: 10px;
-    border-radius: 4px;
-}
-
