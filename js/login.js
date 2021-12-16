@@ -43,6 +43,13 @@ onload = () => { //evento load, retorna uma função anônima de todo o código,
                     //token de validação, gerado de forma aleatória pelo método random(), hexadecimal, ignorando os dois primeiros caracteres, depois concatenado com ele mesmo para dobrar o tamanho.
                     //o token será utilizadao na página de início para impedir a permanencia sem o login
                     localStorage.setItem('token', token); //criação da chave 'token' para armazenamento do conteudo da variável token criada acima
+                    
+                    let user = JSON.parse(localStorage.getItem('[]'));
+                    user = {
+                        email: email.value,
+                        senha: senha.value
+                    }
+                    localStorage.setItem('user', JSON.stringify(user));
                 }
                 //se os valores digitados no campo de formulário forem diferentes dos valores dos itens de validUser, ou seja, se não existir no localStorage, esse bloco será executado
                 else {

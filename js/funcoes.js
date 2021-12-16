@@ -8,6 +8,7 @@
 
 function sair() {
     localStorage.removeItem('token');
+    localStorage.removeItem('user');
     window.location.href = ('../index.html');
 }
 
@@ -63,7 +64,7 @@ function validarProduto(idIDestoque, idNomeProduto, idDescricaoProduto, idPrecoP
     }
 
     if (IDestoque == "") {
-        alert("ID do estoque não pode ficar em branco não pode estar em branco. Favor preenchê-lo!");
+        alert("ID do estoque não pode ficar em branco. Favor preenchê-lo!");
         verificar = 1;
     }
 
@@ -405,4 +406,21 @@ const Pesquisar = () => {
         }
     }
     else alert("A versão do seu navegador é muito antiga. Por isso, não será possível visualizar o estoque!");
+}
+
+//FUNÇÃO PARA MOSTRAR DADOS DO USUÁRIO
+function mostrarUsuario () {
+    let usuario = document.querySelector('#user');
+
+    let listaUser = JSON.parse(localStorage.getItem("listaUser"));
+
+    let user = JSON.parse(localStorage.getItem("user"));
+
+    listaUser.forEach(item =>{
+        if(item.emailCad == user.email && item.senhaCad == user.senha) {
+            usuario.innerHTML = `<h3>Olá, ${item.nomeCad}</h3>
+            <h5>E-mail: ${item.emailCad}</h5>
+            `;
+        }
+    });
 }

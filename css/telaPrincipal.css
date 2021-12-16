@@ -14,7 +14,35 @@
 .btn.btn-sm.btn-outline.sair{
     margin: 8px;
     vertical-align: top;
-    transition: all 0.5s ease-out !important;
+    transition: all 0.5s ease-out;
+}
+#btn-ajuda{
+    font-size: large;
+    transition: all 0.5s ease-out;
+}
+#btn-ajuda:hover{
+    color: #FFF;
+}
+#perfil{
+    width: 26% !important;
+    right: 10px !important;
+    margin-top: 10px;
+    position: absolute;
+}
+.card.card-body{
+    background-image: url("../imgs/bg-app-principal.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+}
+header a {
+    color: #000;
+    transition: all 0.5s ease-out;
+    font-size: large;
+}
+header a:hover{
+    color: #FFF;
 }
 /*------------------------/ CONFIGURAÇÕES DOS PREENCHIMENTOS /------------------------*/
 .alinharRotulos {
@@ -33,7 +61,7 @@ table {
     width: 80%;
     margin: 10px auto;   
 }
-/*------------------------/ CONFIGURAÇÕES DO TITULO /------------------------*/
+/*------------------------/ CONFIGURAÇÕES DO TITULOS /------------------------*/
 #titulo{
     color:coral; 
     font-weight: bold; 
@@ -41,6 +69,11 @@ table {
     margin: 5px auto;
     text-align: center;
     box-shadow: 1px 1px 1px 1px;
+}
+
+.titulo-de-ajuda{
+    color:coral; 
+    font-weight: bold; 
 }
 /*------------------------/ CONFIGURAÇÕES DOS BOTÕES /------------------------*/
 .alinhaBtns {
@@ -85,6 +118,29 @@ table {
     background-color: rgba(18, 206, 12, 0.219);
     box-shadow: 1px 4px 3px 0px;
 }
+/*------------------------/ CONFIGURAÇÕES CAIXA DE AJUDA /------------------------*/
+.caixa-ajuda{
+    background-image: url("../imgs/bg-app-principal.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.modal-ajuda-conteudo li{
+    font-weight: bold;
+}
+#verde{
+    color: green;
+    font-weight: normal;
+}
+#amarelo{
+    color: yellow;
+    font-weight: normal;
+}
+#vermelho{
+    color: red;
+    font-weight: normal;
+}
 /*------------------------/ CONFIGURAÇÕES MEDIA QUERIES /------------------------*/
 @media screen and (max-width:1000px){
     #software{
@@ -92,7 +148,12 @@ table {
         background-size:cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
-       }
+    }
+    #perfil{
+        width: 100% !important;
+        right: 0px !important;
+        position: absolute;
+    }
     .alinhaBtns {
         width: auto;
         padding:5px;

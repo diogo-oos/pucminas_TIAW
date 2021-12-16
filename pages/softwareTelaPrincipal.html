@@ -18,68 +18,98 @@
 </head>
 
 <body id="software" onload="carregarTotalEstoque('totalEstoque'), verificarToken()">
-    <header class="navbar navbar-expand-lg navbar-light" style="background-color: rgba(18, 206, 12, 0.219)">
-        <div class="container-fluid">
-            <a class="navbar-brand"><b><i>SiGEs </i></b></a>
-            <button onclick="sair()" class="btn btn-sm btn-outline sair" type="button"><i
-                    class="bi bi-arrow-left-circle" style="font-size: 1em; padding: 5px;"></i>Sair</button>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgba(18, 206, 12, 0.219)">
+            <div class="container-fluid">
+                <a class="navbar-brand"><b><i>SiGEs</i></b></a>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+
+                    </li>
+                </ul>
+                <button id="btn-ajuda" type="button" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+                    data-bs-toggle="popover" title="Ajuda">
+                    <i class="bi bi-question-circle"></i>
+                </button>
+                <a onclick="mostrarUsuario()" class="btn-perfil" data-bs-toggle="collapse" href="#perfil" role="button" aria-expanded="false"
+                    aria-controls="multiCollapseExample1" data-bs-toggle="popover" title="Ver perfil e botão para sair"><i class="bi bi-person-circle"></i></a>
+            </div>
+        </nav>
     </header>
 
-<div class="container">
-    <div class="flex" id="quadroFundo">
-        <!--Formulário: Nome, código e quantidade de produtos-->
-        <div id="titulo"><b>Cadastro de novos produtos</b></div>
-        <form>
-            <table>
-                <!--ID do estoque-->
-                <tr>
-                    <td class="alinharRotulos">ID do estoque:</td>
-                    <td><input id="txtIDestoque" type="text"></td>
-                </tr>
-                <!--Nome do produto-->
-                <tr>
-                    <td class="alinharRotulos">Nome do produto:</td>
-                    <td><input id="txtNomeProduto" type="text"></td>
-                </tr>
-                <!--Descrição do produto-->
-                <tr>
-                    <td class="alinharRotulos">Descrição do produto:</td>
-                    <td><input id="txtDescricaoProduto" type="text" placeholder="*Opcional"></td>
-                </tr>
-                <!-- preço unitário-->
-                <tr>
-                    <td class="alinharRotulos">Preço unitário:</td>
-                    <td><input id="txtPrecoProduto" type="number"></td>
-                </tr>
-                <!--Código do produto-->
-                <tr>
-                    <td class="alinharRotulos">Código do produto:</td>
-                    <td><input id="txtCodProduto" type="text"></td>
-                </tr>
-                <!--Quantidade do produto-->
-                <tr>
-                    <td class="alinharRotulos">Quantidade do produto:</td>
-                    <td><input id="qtidadeProduto" type="number"></td>
-                </tr>
-                <!--Botoes-->
-                <tr>
-                    <td colspan="2" align="center" id="botoes">
-                        <input type="button" value="Cadastrar Item" class="alinhaBtns" id="cadastrar"
-                            onclick="validarProduto('txtIDestoque','txtNomeProduto','txtDescricaoProduto','txtPrecoProduto','txtCodProduto','qtidadeProduto')">
+    <div class="container">
+        <div class="row perfil">
+            <div class="col">
+                <div class="collapse multi-collapse" id="perfil">
+                    <div class="card card-body">
+                        <div id="user">
 
-                        <input type="button" value="Itens em Estoque" class="alinhaBtns" id="verEstoque"
-                            onclick="window.open('verEstoque.html','_self')">
+                        </div>
+                        <button onclick="sair()" class="btn btn-sm btn-outline sair" type="button"><i
+                            class="bi bi-arrow-left-circle" style="font-size: 1em; padding: 5px;"></i>Sair</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex" id="quadroFundo">
+            <!--Formulário: Nome, código e quantidade de produtos-->
+            <div id="titulo"><b>Cadastro de novos produtos</b></div>
+            <form>
+                <table>
+                    <!--ID do estoque-->
+                    <tr>
+                        <td class="alinharRotulos">ID do estoque:</td>
+                        <td><input id="txtIDestoque" type="text"></td>
+                    </tr>
+                    <!--Nome do produto-->
+                    <tr>
+                        <td class="alinharRotulos">Nome do produto:</td>
+                        <td><input id="txtNomeProduto" type="text"></td>
+                    </tr>
+                    <!--Descrição do produto-->
+                    <tr>
+                        <td class="alinharRotulos">Descrição do produto:</td>
+                        <td><input id="txtDescricaoProduto" type="text" placeholder="*Opcional"></td>
+                    </tr>
+                    <!-- preço unitário-->
+                    <tr>
+                        <td class="alinharRotulos">Preço unitário:</td>
+                        <td><input id="txtPrecoProduto" type="number"></td>
+                    </tr>
+                    <!--Código do produto-->
+                    <tr>
+                        <td class="alinharRotulos">Código do produto:</td>
+                        <td><input id="txtCodProduto" type="text"></td>
+                    </tr>
+                    <!--Quantidade do produto-->
+                    <tr>
+                        <td class="alinharRotulos">Quantidade do produto:</td>
+                        <td><input id="qtidadeProduto" type="number"></td>
+                    </tr>
+                    <!--Botoes-->
+                    <tr>
+                        <td colspan="2" align="center" id="botoes">
+                            <input type="button" value="Cadastrar Item" class="alinhaBtns" id="cadastrar"
+                                onclick="validarProduto('txtIDestoque','txtNomeProduto','txtDescricaoProduto','txtPrecoProduto','txtCodProduto','qtidadeProduto')"
+                                data-bs-toggle="popover" title="Preencha os campos para cadastrar um item no estoque">
 
-                        <input type="button" value="Remover Item" class="alinhaBtns" id="removeItem"
-                            onclick="validarProdutoParaRemocao('txtIDestoque','qtidadeProduto')">
+                            <input type="button" value="Itens em Estoque" class="alinhaBtns" id="verEstoque"
+                                onclick="window.open('verEstoque.html','_self')" data-bs-toggle="popover"
+                                title="Visualize o estoque em outra página">
 
-                        <input type="button" value="Zerar Estoque" class="alinhaBtns" id="limpar"
-                            onclick="apagarDadosEstoque()">
-                    </td>
-                </tr>
-            </table>
-        </form>
-    </div>
+                            <input type="button" value="Remover Item" class="alinhaBtns" id="removeItem"
+                                onclick="validarProdutoParaRemocao('txtIDestoque','qtidadeProduto')"
+                                data-bs-toggle="popover"
+                                title="É necessario preencher apenas o ID do estoque do produto e a quantidade desejada">
+
+                            <input type="button" value="Zerar Estoque" class="alinhaBtns" id="limpar"
+                                onclick="apagarDadosEstoque()" data-bs-toggle="popover"
+                                title="Exclua todos os itens cadastrados">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
         <!--indicador do estoques-->
         <div class="estoque">
             <img src="../imgs/shelf.png">
@@ -88,10 +118,70 @@
             </div>
         </div>
     </div>
+
+    <!-- Modal de ajuda -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content caixa-ajuda">
+                <div class="modal-header">
+                    <h5 class="modal-title titulo-de-ajuda" id="staticBackdropLabel"><b>Ajuda</b></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <section>
+                        <div class="modal-ajuda-conteudo">
+                            <ol>
+                                <li>O que é ID do estoque?</li><br>
+                                <p>Código do lote de produtos que você acabou de receber.<br>Tome cuidado para não
+                                    condundir o ID do estoque com o código do produto!</p>
+
+                                <li>O que é preço unitário?</li><br>
+                                <p>Preço de cada item de determinado estoque. O valor total do estoque será
+                                    calculado automaticamente.<br>Você pode visualizar isso clicando no botão Itens
+                                    em Estoque!</p>
+
+                                <li>O que preciso fazer para remover um item cadastrado no estoque?</li><br>
+                                <p>Você precisa apenas preencher o ID do estoque do item que deseja remover e
+                                    digitar a quantidade desejada.<br>Lembre-se, se você colocar a quantidade total
+                                    daquele item, ele será removido do estoque!</p>
+
+                                <li>Como funciona o Status do estoque?</li><br>
+                                <p>Servem para alerta-lo quanto a quantidade de determinado item no estoque.</p>
+                                <ul>
+                                    <li>O ícone será <span id="verde">verde</span> se:</li>
+                                    <p>A quantidade do item for maior ou igual a 50. Fique tranquilo!</p>
+                                    <li>Será <span id="amarelo">amarelo</span> se:</li>
+                                    <p>A quantidade do item estiver entre 11 e 49. Fique em alerta!</p>
+                                    <li>Será <span id="vermelho">vermelho</span> se:</li>
+                                    <p>A quantidade do item for menor ou igual a 10. Seu estoque está prestes a
+                                        acabar!</p>
+                                </ul>
+
+                                <li>Como são calculados os valores do estoque inicial e atual?</li><br>
+                                <ul>
+                                    <li>Valor do estoque inicial:</li>
+                                    <p>É um valor fixo. É dado pela multiplicação do preço unitário do produto pela
+                                        quantidade cadastrada.</p>
+
+                                    <li>Valor do estoque atual:</li>
+                                    <p>O cálculo é feito da mesma forma do valor inicial, com a diferença de que é
+                                        um valor dado em tempo real, ou seja,<br>
+                                        ele mostra o valor do estoque conforme a quantidade daquele item vai
+                                        diminuindo.
+                                    </p>
+                                </ul>
+                            </ol>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
     <!--script bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-    crossorigin="anonymous"></script>
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
