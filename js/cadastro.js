@@ -83,7 +83,14 @@ onload = () => { //evento load, retorna uma função anônima de todo o código,
 
     //condições de validação do formulário de e-mail
     email.onkeyup = () => { 
-        if (email.value.length == 0){ //se o comprimento do vetor do fomuláro ser igual a 0
+        if (email.value.endsWith('@gmail.com') || email.value.endsWith('@gmail.com.br')){ 
+            labelEmail.innerHTML = 'Digite seu e-mail:';             
+            labelEmail.style.color = 'black';
+            email.style.border = 'thin #CED4DA solid';
+            validEmail = true;
+            validarCadastro();
+        } 
+        else if(email.value.includes(' ') || email.value.includes('..') || email.value.includes('||\\!%*$-=§°/?\'",;;<>]}ºª¬¨£¢¹²³()#')){ 
             labelEmail.innerHTML = 'E-mail inválido*'; 
             labelEmail.style.color = 'red';
             email.style.border = 'thin red solid'; 
@@ -91,10 +98,10 @@ onload = () => { //evento load, retorna uma função anônima de todo o código,
             validarCadastro();
         } 
         else { //se não for igual a 0
-            labelEmail.innerHTML = 'Digite seu e-mail:';             
-            labelEmail.style.color = 'black';
-            email.style.border = 'thin #CED4DA solid';
-            validEmail = true;
+            labelEmail.innerHTML = 'E-mail inválido*'; 
+            labelEmail.style.color = 'red';
+            email.style.border = 'thin red solid'; 
+            validEmail = false;
             validarCadastro();
         }
     }

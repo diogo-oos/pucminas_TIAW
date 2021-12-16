@@ -4,6 +4,7 @@
  background-size:cover;
  background-repeat: no-repeat;
  background-attachment: fixed;
+ font-family: Arial, Helvetica, sans-serif;
 }
 /*------------------------/ CONFIGURAÇÕES DO HEADER (CABECALHO) /------------------------*/
 .btn.btn-sm.btn-outline.sair:hover {
@@ -13,9 +14,35 @@
 .btn.btn-sm.btn-outline.sair{
     margin: 8px;
     vertical-align: top;
+    transition: all 0.5s ease-out;
 }
-.btn.btn-sm.btn-outline.sair{
-    transition: all 0.5s ease-out !important;
+#btn-ajuda{
+    font-size: large;
+    transition: all 0.5s ease-out;
+}
+#btn-ajuda:hover{
+    color: #FFF;
+}
+#perfil{
+    width: 26% !important;
+    right: 10px !important;
+    margin-top: 10px;
+    position: absolute;
+}
+.card.card-body{
+    background-image: url("../imgs/bg-app-principal.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+}
+header a {
+    color: #000;
+    transition: all 0.5s ease-out;
+    font-size: large;
+}
+header a:hover{
+    color: #FFF;
 }
 /*------------------------/ CONFIGURAÇÕES DOS PREENCHIMENTOS /------------------------*/
 .alinharRotulos {
@@ -23,24 +50,30 @@
 }
 input, select{
     margin-top: 5px;
+    border-radius: 5px;
 }
 table {
     clear: both; 
     background-color: coral;
-    border-radius: 10px; 
+    border-radius: 5px 10px 5px 10px; 
     color:white;
     padding: 10px;
     width: 80%;
     margin: 10px auto;   
 }
-/*------------------------/ CONFIGURAÇÕES DO TITULO /------------------------*/
+/*------------------------/ CONFIGURAÇÕES DO TITULOS /------------------------*/
 #titulo{
     color:coral; 
     font-weight: bold; 
     font-size: 40px;
     margin: 5px auto;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
+    box-shadow: 1px 1px 1px 1px;
+}
+
+.titulo-de-ajuda{
+    color:coral; 
+    font-weight: bold; 
 }
 /*------------------------/ CONFIGURAÇÕES DOS BOTÕES /------------------------*/
 .alinhaBtns {
@@ -79,11 +112,34 @@ table {
 .estoque {
     width:170px; 
     margin: 50px auto;
-    border-radius: 5px;
+    border-radius: 5px 10px 5px 10px;
     padding: 10px;
     text-align: center;
     background-color: rgba(18, 206, 12, 0.219);
     box-shadow: 1px 4px 3px 0px;
+}
+/*------------------------/ CONFIGURAÇÕES CAIXA DE AJUDA /------------------------*/
+.caixa-ajuda{
+    background-image: url("../imgs/bg-app-principal.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.modal-ajuda-conteudo li{
+    font-weight: bold;
+}
+#verde{
+    color: green;
+    font-weight: normal;
+}
+#amarelo{
+    color: yellow;
+    font-weight: normal;
+}
+#vermelho{
+    color: red;
+    font-weight: normal;
 }
 /*------------------------/ CONFIGURAÇÕES MEDIA QUERIES /------------------------*/
 @media screen and (max-width:1000px){
@@ -92,7 +148,12 @@ table {
         background-size:cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
-       }
+    }
+    #perfil{
+        width: 100% !important;
+        right: 0px !important;
+        position: absolute;
+    }
     .alinhaBtns {
         width: auto;
         padding:5px;
@@ -116,7 +177,7 @@ table {
     table {
         clear: both; 
         background-color: coral;
-        border-radius: 10px; 
+        border-radius: 5px 10px 5px 10px; 
         color:white;
         padding: 30px;
         width: 100%;
@@ -132,8 +193,9 @@ table {
     
 }
 #quadroFundo{
+    margin: 30px;
     background-color: rgba(0, 0, 255, 0.082);
-    margin: 10px 10px;
+    border-radius: 5px 10px 5px 10px;
     padding: 5%;
     border-radius: 10px;
     box-shadow: 1px 4px 3px 0px;
