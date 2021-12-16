@@ -184,7 +184,7 @@ function removerProduto(IDestoque, qtidade) {
                         atualizarRemocaoEstoque("totalEstoque");
                         location.reload();
 
-                        if (posicao == 0) {
+                        if (estoque.length == 0) {
                             localStorage.removeItem("totalEstoque");
                             localStorage.removeItem("estoque");
                             carregarTotalEstoque("totalEstoque");
@@ -350,23 +350,6 @@ function apagarDadosEstoque() {
             location.reload();
         }
     }
-}
-
-function busca(idNome) {
-    let nome = document.getElementById(idNome).value;
-    let estoque = JSON.parse(localStorage.getItem("estoque"));
-    let verificar = false;
-    if (estoque !== null) {
-        estoque.forEach((item) => {
-            if (nome == item.idNome) {
-                listarEstoque(item);
-                verificar = true;
-            }
-        });
-    } else if (verificar == false) {
-        alert("Nenhum item com este nome foi encontrado, tente novamente usando outro nome.");
-    }
-
 }
 
 //FUNÇÃO DE BUSCA
