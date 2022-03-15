@@ -161,6 +161,10 @@ function validarProdutoParaRemocao(idIDestoque, idQtidadeProduto) {
         alert("O ID do estoque não pode estar em branco. Favor preenchê-lo!");
     }
 
+    else if(qtidade == "") {
+        alert("Digite a quantidade que deseja remover desse produto")
+    }
+
     else {
         removerProduto(IDestoque, parseInt(qtidade));
     }
@@ -392,15 +396,15 @@ const Pesquisar = () => {
 }
 
 //FUNÇÃO PARA MOSTRAR DADOS DO USUÁRIO
-function mostrarUsuario () {
+function mostrarUsuario() {
     let usuario = document.querySelector('#user');
 
     let listaUser = JSON.parse(localStorage.getItem("listaUser"));
 
     let user = JSON.parse(localStorage.getItem("user"));
 
-    listaUser.forEach(item =>{
-        if(item.emailCad == user.email && item.senhaCad == user.senha) {
+    listaUser.forEach(item => {
+        if (item.emailCad == user.email && item.senhaCad == user.senha) {
             usuario.innerHTML = `<h3>Olá, ${item.nomeCad}</h3>
             <h5>E-mail: ${item.emailCad}</h5>
             `;

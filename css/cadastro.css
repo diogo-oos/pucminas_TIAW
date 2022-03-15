@@ -2,7 +2,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background-image: url(../imgs/bg-cadastro.png);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100%;
     background-attachment: fixed;
 }
 
@@ -72,9 +72,15 @@ button, a{
     display: none;
     cursor: pointer;
 }
-@media screen and (max-height: 450px) {
+@media screen and (max-width: 1000px) {
     .sidenav {
         padding-top: 15px;
+    }
+
+    .btn.btn-lg.btn-outline.login{
+        position: relative;
+        top: -60px;
+        left: -10px;
     }
     
 }
